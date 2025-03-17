@@ -13,7 +13,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
 
 ### Standalone measurements
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,12 +21,17 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
   <title>Dynamic Table</title>
 </head>
 <body>
-  <table id="dynamicTable" border="1">
+  <table id="dynamicStandalone" border="1">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>City</th>
+        <th>Location</th>
+        <th>Country</th>
+        <th>Synchronous Area</th>
+        <th>resolution</th>
+        <th>date range</th>
+        <th>number of days</th>
+        <th>direct link</th>
+        <th>size (mb)</th>
       </tr>
     </thead>
     <tbody>
@@ -35,12 +40,12 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
   <script>
     const jsonData = [
-      { "name": "Alice", "age": 30, "city": "Berlin" },
+      { "location": "Reykjavík", "country": "Iceland", "synchronousArea": "Icelandic Grid", "Resolution":"1 sec", "dateRange":" 2017-10-14 - 2017-10-20", "noOfDays":"5.6","link":"[OSF link](https://osf.io/sxph8/download) ", "size":"15.4"},
       { "name": "Bob", "age": 25, "city": "Munich" },
       { "name": "Charlie", "age": 35, "city": "Hamburg" }
     ];
 
-    const tableBody = document.getElementById('dynamicTable').getElementsByTagName('tbody')[0];
+    const tableBody = document.getElementById('dynamicStandalone').getElementsByTagName('tbody')[0];
 
     jsonData.forEach(item => {
       let row = tableBody.insertRow();
@@ -54,7 +59,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 </html>
 | Location | Country | Synchronous Area | resolution |  date range | number of days | direct link | size (mb) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Reykjavík | Iceland | Icelandic Grid | 1 sec |  2017-10-14 - 2017-10-20 | 5.6   | [OSF link](https://osf.io/sxph8/download) | 15.4 |
+|  |  |  |  | |    | |  |
 | Vestmanna | Faroe Islands | Faroe Grid | 1 sec |  2019-11-03 - 2019-11-10 | 6.5   | [OSF link](https://osf.io/a7h5b/download) | 24.5 |
 | Las Palmas de Gran Canaria, Canary Islands | Spain | Gran Canarian Grid | 1 sec |  2018-02-04 - 2018-02-10 | 6.5  | [OSF link](https://osf.io/wz42b/download) |  16.2 |
 |   |    |    |    |  2018-11-25 - 2018-11-26 | 1.5   | [OSF link](https://osf.io/rukat/download) |  4.4 |
