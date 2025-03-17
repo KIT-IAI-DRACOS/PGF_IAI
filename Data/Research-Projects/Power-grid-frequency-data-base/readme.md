@@ -51,7 +51,11 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       let row = tableBody.insertRow();
       Object.values(item).forEach(text => {
         let cell = row.insertCell();
-        cell.textContent = text;
+        if (text.includes("<a ")) {
+            cell.innerHTML = text;
+            } else {
+            cell.textContent = text;
+        }
       });
     });
   </script>
