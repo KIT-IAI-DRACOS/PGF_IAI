@@ -13,7 +13,45 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
 
 ### Standalone measurements
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Table</title>
+</head>
+<body>
+  <table id="dynamicTable" border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
 
+  <script>
+    const jsonData = [
+      { "name": "Alice", "age": 30, "city": "Berlin" },
+      { "name": "Bob", "age": 25, "city": "Munich" },
+      { "name": "Charlie", "age": 35, "city": "Hamburg" }
+    ];
+
+    const tableBody = document.getElementById('dynamicTable').getElementsByTagName('tbody')[0];
+
+    jsonData.forEach(item => {
+      let row = tableBody.insertRow();
+      Object.values(item).forEach(text => {
+        let cell = row.insertCell();
+        cell.textContent = text;
+      });
+    });
+  </script>
+</body>
+</html>
 | Location | Country | Synchronous Area | resolution |  date range | number of days | direct link | size (mb) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Reykjavík | Iceland | Icelandic Grid | 1 sec |  2017-10-14 - 2017-10-20 | 5.6   | [OSF link](https://osf.io/sxph8/download) | 15.4 |
