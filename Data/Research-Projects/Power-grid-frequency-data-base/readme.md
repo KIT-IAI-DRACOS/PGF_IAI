@@ -40,7 +40,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
   <script>
     const jsonData = [
-      { "location": "Reykjavík", "country": "Iceland", "synchronousArea": "Icelandic Grid", "Resolution":"1 sec", "dateRange":" 2017-10-14 - 2017-10-20", "noOfDays":"5.6","link":<a href="https://osf.io/sxph8/download">OSF link</a>, "size":"15.4"},
+      { "location": "Reykjavík", "country": "Iceland", "synchronousArea": "Icelandic Grid", "Resolution":"1 sec", "dateRange":" 2017-10-14 - 2017-10-20", "noOfDays":"5.6","link":'<a href="https://osf.io/sxph8/download">OSF link</a>', "size":"15.4"},
      { "location": "Vestmanna", "country": "Faroe Islands", "synchronousArea": "Faroe Grid", "Resolution":"1 sec", "dateRange":"   2019-11-03 - 2019-11-10 ", "noOfDays":"6.5","link":"<a href=\"https://osf.io/a7h5b/download\">OSF link</a>", "size":"24.5"},
      { "location": "Las Palmas de Gran Canaria, Canary Islands", "country": "Spain", "synchronousArea": "Gran Canarian Grid", "Resolution":"1 sec", "dateRange":"   2018-02-04 - 2018-02-10 ", "noOfDays":"6.5","link":'<a href="https://osf.io/wz42b/download">OSF link</a>', "size":"16.2"}
     ];
