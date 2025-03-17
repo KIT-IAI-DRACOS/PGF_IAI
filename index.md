@@ -31,18 +31,6 @@ classes: wide
 <script src="assets/locations/locations.js"></script>
 
 <script>
-fetch('https://jsonplaceholder.typicode.com/todos/1')
-  .then(response => response.json())
-  .then(json => {
-    console.log(json)
-    var dummyJson=["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"]
-    dummyJson.forEach(setYears)
-    var yearJson = {};
-    function setYears(item, index){
-      yearJson[item] = L.layerGroup()
-    }
-    const years = yearJson;
-    console.log(years);    
 
 var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     'attribution': '&copy; <a href="https://osmlab.github.io/attribution-mark/copyright/?name={{ site.title }}">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Made with <a href="https://www.naturalearthdata.com/">Natural Earth</a>',
@@ -117,7 +105,19 @@ L.geoJson(GranCanariaGeo, {style: style, onEachFeature: mouseOverFeature}).addTo
 L.geoJson(SouthAfricaGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
 L.geoJson(JapanGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
 
-
+const years = {
+  "2011": L.layerGroup(),
+  "2012": L.layerGroup(),
+  "2013": L.layerGroup(),
+  "2014": L.layerGroup(),
+  "2015": L.layerGroup(),
+  "2016": L.layerGroup(),
+  "2017": L.layerGroup(),
+  "2018": L.layerGroup(),
+  "2019": L.layerGroup(),
+  "2020": L.layerGroup(),
+  "2021": L.layerGroup()
+};
 
 L.geoJSON(locations, {
     onEachFeature: iconBindPopup,
@@ -203,13 +203,13 @@ info.addTo(map);
 // Slider
 var slider = document.getElementById('slider');
 noUiSlider.create(slider, {
-    start: [2011, 2025], // Handle start position
+    start: [2011, 2021], // Handle start position
     connect: true, // Display a colored bar between the handles
     step: 1, // Steps shown, i.e., year by year
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
     range: { // Slider can select '0' to '100'
         'min': 2011,
-        'max': 2025
+        'max': 2021
     },
     pips: { // Show a scale with the slider
         mode: 'steps',
@@ -228,10 +228,6 @@ slider.noUiSlider.on('update', function (values, handle) {
       };
     });
 });
-
-    })
-  .catch(error => console.error('Error:', error));
-
 
 
 </script>
