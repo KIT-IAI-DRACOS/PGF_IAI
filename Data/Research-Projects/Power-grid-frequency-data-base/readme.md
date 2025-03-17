@@ -40,9 +40,9 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
   <script>
     const jsonData = [
-      { "location": "Reykjavík", "country": "Iceland", "synchronousArea": "Icelandic Grid", "Resolution":"1 sec", "dateRange":" 2017-10-14 - 2017-10-20", "noOfDays":"5.6","link":"[OSF link](https://osf.io/sxph8/download) ", "size":"15.4"},
-      { "name": "Bob", "age": 25, "city": "Munich" },
-      { "name": "Charlie", "age": 35, "city": "Hamburg" }
+      { "location": "Reykjavík", "country": "Iceland", "synchronousArea": "Icelandic Grid", "Resolution":"1 sec", "dateRange":" 2017-10-14 - 2017-10-20", "noOfDays":"5.6","link":"<a href=\"https://osf.io/sxph8/download\">OSF link</a>", "size":"15.4"},
+     { "location": "Vestmanna", "country": "Faroe Islands", "synchronousArea": "Faroe Grid", "Resolution":"1 sec", "dateRange":"   2019-11-03 - 2019-11-10 ", "noOfDays":"6.5","link":"<a href=\"https://osf.io/a7h5b/download\">OSF link</a>", "size":"24.5"},
+     { "location": "Las Palmas de Gran Canaria, Canary Islands", "country": "Spain", "synchronousArea": "Gran Canarian Grid", "Resolution":"1 sec", "dateRange":"   2018-02-04 - 2018-02-10 ", "noOfDays":"6.5","link":"<a href=\"https://osf.io/wz42b/download\">OSF link</a>", "size":"16.2"},
     ];
 
     const tableBody = document.getElementById('dynamicStandalone').getElementsByTagName('tbody')[0];
@@ -60,8 +60,8 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 | Location | Country | Synchronous Area | resolution |  date range | number of days | direct link | size (mb) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |  |  |  |  | |    | |  |
-| Vestmanna | Faroe Islands | Faroe Grid | 1 sec |  2019-11-03 - 2019-11-10 | 6.5   | [OSF link](https://osf.io/a7h5b/download) | 24.5 |
-| Las Palmas de Gran Canaria, Canary Islands | Spain | Gran Canarian Grid | 1 sec |  2018-02-04 - 2018-02-10 | 6.5  | [OSF link](https://osf.io/wz42b/download) |  16.2 |
+|  |  |  | 1 sec ||    |  |  |
+|  |  | Gran Canarian Grid | 1 sec |  2018-02-04 - 2018-02-10 | 6.5  |  |  16.2 |
 |   |    |    |    |  2018-11-25 - 2018-11-26 | 1.5   | [OSF link](https://osf.io/rukat/download) |  4.4 |
 | Palma de Mallorca, Balearic Islands | Spain | Mallorcan Grid | 1 sec | 2019-09-29 - 2019-12-31 | 94.0  | [OSF link](https://osf.io/2qn9k/download) |  324 |
 | London | United Kingdom | National Grid | 1 sec |  2019-03-04 - 2019-03-07 | 3.5  | [OSF link](https://osf.io/cfv47/download) | 9.2 |
