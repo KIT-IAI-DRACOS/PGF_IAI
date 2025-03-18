@@ -34,14 +34,14 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
   </table>
 
   <script>
-    const rows = document.getElementById("dynamicStandalone").getElementsByTagName("tr");
 
-    document.getElementById("txtSearchStandalone").onkeyup = e => {
-        for (const tr of rows)
-        if (tr.innerHTML.toLowerCase().includes("td")){
-            tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
+    const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
+    document.getElementById("searchInput").onkeyup = (e) => {
+    const query = e.target.value.toLowerCase();
+    for (const tr of rows) {
+            tr.style.display = tr.innerText.toLowerCase().includes(query) ? "" : "none";
         }
-    }
+    };
 
     const jsonData = [
       { "location": "Reykjavík", "country": "Iceland", "synchronousArea": "Icelandic Grid", "Resolution":"1 sec", "dateRange":" 2017-10-14 - 2017-10-20", "noOfDays":"5.6","link":"<a href='https://osf.io/sxph8/download'>OSF link</a>", "size":"15.4"},
