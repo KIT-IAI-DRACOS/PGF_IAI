@@ -43,6 +43,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
   <script>
     const rows = document.getElementById("dynamicStandalone").getElementsByTagName("tr");
+    console.log(rows)
 
     document.getElementById("txtSearchStandalone").onkeyup = e => {
         for (const tr of rows)
