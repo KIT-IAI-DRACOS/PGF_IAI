@@ -14,10 +14,8 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
 ### Standalone measurements
 
-
-
+<label for="txtSearchStandalone">Enter text to search the table</label>
 <input type="input" id="txtSearchStandalone" name="txtSearchStandalone"/>
-<label for="txtSearchStandalone" text="Search">
   <table id="dynamicStandalone">
     <thead>
       <tr>
@@ -37,7 +35,6 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
   <script>
     const rows = document.getElementById("dynamicStandalone").getElementsByTagName("tr");
-    console.log(rows)
 
     document.getElementById("txtSearchStandalone").onkeyup = e => {
         for (const tr of rows)
