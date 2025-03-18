@@ -21,8 +21,9 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
   <title>Dynamic Table</title>
 </head>
 <body>
-<input type="input" id="txtSearchStandalone"/>
 
+<input type="input" id="txtSearchStandalone" name="txtSearchStandalone"/>
+<label for="txtSearchStandalone" text="Search">
   <table id="dynamicStandalone">
     <thead>
       <tr>
