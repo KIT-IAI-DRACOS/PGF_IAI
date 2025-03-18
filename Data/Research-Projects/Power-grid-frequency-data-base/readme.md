@@ -42,6 +42,14 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
   </table>
 
   <script>
+    function searchStandalone(){
+        const rows = document.getElementById("dynamicStandalone").getElementsByTagName("tr");
+
+        document.getElementById("txtSearchStandalone").onkeyup = e => {
+            for (const tr of trs)
+            tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
+        }
+    }
     const jsonData = [
       { "location": "Reykjavík", "country": "Iceland", "synchronousArea": "Icelandic Grid", "Resolution":"1 sec", "dateRange":" 2017-10-14 - 2017-10-20", "noOfDays":"5.6","link":"<a href='https://osf.io/sxph8/download'>OSF link</a>", "size":"15.4"},
      { "location": "Vestmanna", "country": "Faroe Islands", "synchronousArea": "Faroe Grid", "Resolution":"1 sec", "dateRange":"   2019-11-03 - 2019-11-10 ", "noOfDays":"6.5","link":"<a href=\"https://osf.io/a7h5b/download\">OSF link</a>", "size":"24.5"},
