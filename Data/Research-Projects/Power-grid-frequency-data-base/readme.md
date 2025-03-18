@@ -47,7 +47,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
     document.getElementById("txtSearchStandalone").onkeyup = e => {
         for (const tr of rows)
-        if (tr.innerText.toLowerCase().includes("td")){
+        if (tr.innerHTML.toLowerCase().includes("td")){
             tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
         }
     }
