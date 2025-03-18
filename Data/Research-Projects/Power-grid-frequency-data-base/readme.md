@@ -36,11 +36,11 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
   <script>
 
     const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
-    document.getElementById("txtSearchStandalone").onkeyup = e =>  {
-    const query = e.target.value.toLowerCase();
-    for (const tr of rows) {
-            tr.style.display = tr.innerText.toLowerCase().includes(query) ? "" : "none";
-        }
+    document.getElementById("txtSearchStandalone").onkeyup = e => {
+        for (const tr of rows)
+        // if (tr.innerHTML.toLowerCase().includes("td")){
+            tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
+        // }
     };
 
     const jsonData = [
