@@ -36,7 +36,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
   <script>
 
     const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
-    document.getElementById("searchInput").onkeyup = (e) => {
+    document.getElementById("txtSearchStandalone").onkeyup = e =>  {
     const query = e.target.value.toLowerCase();
     for (const tr of rows) {
             tr.style.display = tr.innerText.toLowerCase().includes(query) ? "" : "none";
