@@ -21,7 +21,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
   <title>Dynamic Table</title>
 </head>
 <body>
-  <table id="dynamicStandalone" border="1">
+  <table id="dynamicStandalone">
     <thead>
       <tr>
         <th>Location</th>
@@ -46,7 +46,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
      { "location": "", "country": "", "synchronousArea": "", "Resolution":"", "dateRange":"   2018-11-25 - 2018-11-26 ", "noOfDays":"1.5","link":'<a href="https://osf.io/rukat/download">OSF link</a>', "size":"4.4"},
      { "location": "Palma de Mallorca, Balearic Islands", "country": "Spain", "synchronousArea": "Mallorcan Grid", "Resolution":"1 sec", "dateRange":"   2019-09-29 - 2019-12-31 ", "noOfDays":"94.0","link":'<a href="https://osf.io/2qn9k/download">OSF link</a>', "size":"324"},
      { "location": "London", "country": "United Kingdom", "synchronousArea": "National Grid", "Resolution":"1 sec", "dateRange":"   2019-03-04 - 2019-03-07 ", "noOfDays":"3.5","link":'<a href="https://osf.io/cfv47/download">OSF link</a>', "size":"9.2"},
-     { "location": "", "country": "", "synchronousArea": "", "Resolution":"", "dateRange":"   2019-11-10 - 2019-12-31 ", "noOfDays":"51.1","link":'<a href="https://osf.io/h5ydu/download">OSF link</a>', "size":"135"},
+     { "location": "London", "country": "United Kingdom", "synchronousArea": "National Grid", "Resolution":"1 sec", "dateRange":"   2019-11-10 - 2019-12-31 ", "noOfDays":"51.1","link":'<a href="https://osf.io/h5ydu/download">OSF link</a>', "size":"135"},
      { "location": "Lauris", "country": "France", "synchronousArea": "Continental Europe", "Resolution":"1 sec", "dateRange":"   2019-04-16 - 2019-04-27 ", "noOfDays":" 12.0 ","link":'<a href="https://osf.io/hfsrz/download">OSF link</a>', "size":"41.2"},
      { "location": "Split", "country": "Croatia", "synchronousArea": "Continental Europe", "Resolution":"1 sec", "dateRange":"   2019-04-09 - 2019-04-12 ", "noOfDays":" 4.0 ","link":'<a href="https://osf.io/r9eh6/download">OSF link</a>', "size":"13.5"},
      { "location": "Erice, Sicily", "country": "Italy", "synchronousArea": "Continental Europe", "Resolution":"1 sec", "dateRange":"   2019-07-02 - 2019-07-06 ", "noOfDays":" 5.0 ","link":'<a href="https://osf.io/c754b/download">OSF link</a>', "size":"17.1"},
