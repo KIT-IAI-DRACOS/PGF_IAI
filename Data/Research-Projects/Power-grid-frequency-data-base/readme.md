@@ -14,13 +14,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
 ### Standalone measurements
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Table</title>
-</head>
-<body>
+
 
 <input type="input" id="txtSearchStandalone" name="txtSearchStandalone"/>
 <label for="txtSearchStandalone" text="Search">
@@ -88,8 +82,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       });
     });
   </script>
-</body>
-</html>
+
 
 
 The links are direct links to the `.csv` files from the Open Science Framework repository [Power grid frequency data base](https://osf.io/by5hu/).
