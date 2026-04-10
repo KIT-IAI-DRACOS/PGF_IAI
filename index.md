@@ -38,7 +38,6 @@ var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
     'maxZoom': 19
   });
 
-
 var LeafIcon = L.Icon.extend({
     options: {
         iconUrl: 'assets/js/images/marker-icon.png',
