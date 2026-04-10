@@ -14,6 +14,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
 ### Standalone measurements
 
+
 <label for="txtSearchStandalone">Enter text to search the table</label>
 <input type="input" id="txtSearchStandalone" name="txtSearchStandalone"/>
   <table id="dynamicStandalone" style="width: 980px">
