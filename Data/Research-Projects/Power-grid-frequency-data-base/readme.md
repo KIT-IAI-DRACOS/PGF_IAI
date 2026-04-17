@@ -33,7 +33,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     </tbody>
   </table>
 
-<label for="output">Json text</label>
+<label id="output">Json text</label>
 
   <script>
 
