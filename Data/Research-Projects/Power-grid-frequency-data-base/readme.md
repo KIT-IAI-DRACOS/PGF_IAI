@@ -37,7 +37,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
   <script>
 
-    fetch("assets/files/iceland.json")
+    fetch("./assets/files/iceland.json")
       .then(res => res.text())
       .then(text => {
         document.getElementById("output").textContent = text;
