@@ -51,7 +51,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
   <script>
 
     async function loadMetadata() {
-      const response = await fetch("./assets/files/iceland.json");
+      const response = await fetch("./../assets/files/iceland.json");
       const data = await response.json();
 
       const tbody = document.querySelector("#metadataStandalone tbody");
