@@ -24,6 +24,7 @@ Synchronous Area| Location | Provider | Resolution | Date range |
 |   | France |  [RTE](https://clients.rte-france.com/lang/an/visiteurs/vie/vie_frequence.jsp) | 10 sec | 2014-2020 |
 | Nordic Grid | Finland | [FinGrid](https://data.fingrid.fi/en/dataset/frequency-historical-data) | 0.1 sec | 2015-2019 |
 | National Grid (GB) | England | [NESO National Energy System Operator](https://www.neso.energy/industry-information/balancing-services/frequency-response-services/historic-frequency-data) | 1 sec | 2014-2019 |
+| National Grid (GB) | England | [NESO National Energy System Operator](https://www.neso.energy/data-portal/system-frequency-data) | 1 sec | 2020-2026 |
 
 
 # Independent recording
