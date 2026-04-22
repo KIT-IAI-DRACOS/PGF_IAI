@@ -57,10 +57,10 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       const tbody = document.querySelector("#metadataStandalone tbody");
       tbody.innerHTML = "";
 
-      location=data.spatial.location.address;
-      country=data.spatial.extent.name;
-      temporal=`${data.temporal.timeseries[0].resolutionValue}${data.temporal.timeseries[0].resolutionUnit}`;
-      dateRange=`${data.temporal.timeseries[0].start}-${data.temporal.timeseries[0].end}`; 
+      location=`<label>${data.spatial.location.address}</label>`;
+      country=`<label>${data.spatial.extent.name}</label>`;
+      temporal=`<label>${data.temporal.timeseries[0].resolutionValue}${data.temporal.timeseries[0].resolutionUnit}</label>`;
+      dateRange=`<label>${data.temporal.timeseries[0].start}-${data.temporal.timeseries[0].end}</label>`; 
       path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
 
       const row = document.createElement("tr");
