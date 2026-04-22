@@ -33,15 +33,66 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     </tbody>
   </table>
 
+  <table id="metadataStandalone" style="width: 980px">
+   <thead>
+      <tr>
+        <th>Location</th>
+        <th>Country</th>
+        <th>Resolution</th>
+        <th>Date Range</th>
+        <th>Path</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
 <label id="output">Json text</label>
 
   <script>
 
-    fetch("./assets/files/iceland.json")
-      .then(res => res.text())
-      .then(text => {
-        document.getElementById("output").textContent = text;
-    });
+    async function loadMetadata() {
+      const response = await fetch("./assets/files/iceland.json");
+      const data = await response.json();
+
+      const tbody = document.querySelector("#metadataStandalone tbody");
+      tbody.innerHTML = "";
+
+      location=data.spatial.location.address;
+      country=data.spatial.extent.name;
+      temporal=${data.temporal.timeseries[0].resolutionValue}{data.temporal.timeseries[0].resolutionUnit};
+      dateRange=${data.temporal.timeseries[0].start}-{data.temporal.timeseries[0].end};
+      path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
+
+      const row = document.createElement("tr");
+
+      [row, location, country, temporal, path];
+
+      const locationCell = document.createElement("td");
+      locationCell.innerHTML = location;
+
+      const countryCell = document.createElement("td");
+      countryCell.innerHTML = country;
+
+      const temporalCell = document.createElement("td");
+      temporalCell.innerHTML = temporal;
+
+      const pathCell = document.createElement("td");
+      pathCell.innerHTML = path;
+
+      row.appendChild(locationCell);
+      row.appendChild(countryCell);
+      row.appendChild(temporalCell);
+      row.appendChild(pathCell);
+
+      tbody.appendChild(row);
+    }
+
+    populateTable();
+    // fetch("./assets/files/iceland.json")
+    //   .then(res => res.text())
+    //   .then(text => {
+    //     document.getElementById("output").textContent = text;
+    // });
     
     document.getElementById("txtSearchStandalone").onkeyup = e => {
         const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
