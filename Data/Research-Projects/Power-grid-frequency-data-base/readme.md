@@ -46,7 +46,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     <tbody></tbody>
   </table>
 
-<label id="output">Json text</label>
+
 
   <script>
 
@@ -57,18 +57,18 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       const tbody = document.querySelector("#metadataStandalone tbody");
       tbody.innerHTML = "";
 
-      location=`<label>${data.spatial.location.address}</label>`;
+      locationValue=`<label>${data.spatial.location.address}</label>`;
       country=`<label>${data.spatial.extent.name}</label>`;
       temporal=`<label>${data.temporal.timeseries[0].resolutionValue}${data.temporal.timeseries[0].resolutionUnit}</label>`;
       dateRange=`<label>${data.temporal.timeseries[0].start}-${data.temporal.timeseries[0].end}</label>`; 
       path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
 
-      const row = document.createElement("tr");
+      const row = document.createElement("tr"); 
 
-      [row, location, country, temporal, path];
+      [row, locationValue, country, temporal, path];
 
       const locationCell = document.createElement("td");
-      locationCell.innerHTML = location;
+      locationCell.innerHTML = locationValue;
 
       const countryCell = document.createElement("td");
       countryCell.innerHTML = country;
@@ -76,12 +76,16 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       const temporalCell = document.createElement("td");
       temporalCell.innerHTML = temporal;
 
+      const dateRangeCell = document.createElement("td");
+      dateRangeCell.innerHTML = dateRange;
+
       const pathCell = document.createElement("td");
       pathCell.innerHTML = path;
 
       row.appendChild(locationCell);
       row.appendChild(countryCell);
       row.appendChild(temporalCell);
+      row.appendChild(dateRangeCell);
       row.appendChild(pathCell);
 
       tbody.appendChild(row);
