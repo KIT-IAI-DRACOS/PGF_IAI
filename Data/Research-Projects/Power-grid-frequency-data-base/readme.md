@@ -33,6 +33,8 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     </tbody>
   </table>
 
+<label for="txtSearchStandaloneMetadata">Enter text to search the table</label>
+<input type="input" id="txtSearchStandaloneMetadata" name="txtSearchStandaloneMetadata"/>
   <table id="metadataStandalone" style="width: 980px">
    <thead>
       <tr>
@@ -59,27 +61,27 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
       locationValue=`<label>${data.spatial.location.address}</label>`;
       country=`<label>${data.spatial.extent.name}</label>`;
-      temporal=`<label>${data.temporal.timeseries[0].resolutionValue}${data.temporal.timeseries[0].resolutionUnit}</label>`;
-      dateRange=`<label>${data.temporal.timeseries[0].start}-${data.temporal.timeseries[0].end}</label>`; 
+      temporal=`<label>${data.temporal.timeseries[0].resolutionValue}</label>`;
+      dateRange=`<label>${data.temporal.timeseries[0].start}<br/>${data.temporal.timeseries[0].end}</label>`; 
       path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
 
-      const row = document.createElement("tr"); 
+      row = document.createElement("tr"); 
 
       [row, locationValue, country, temporal, path];
 
-      const locationCell = document.createElement("td");
+      locationCell = document.createElement("td");
       locationCell.innerHTML = locationValue;
 
-      const countryCell = document.createElement("td");
+      countryCell = document.createElement("td");
       countryCell.innerHTML = country;
 
-      const temporalCell = document.createElement("td");
+      temporalCell = document.createElement("td");
       temporalCell.innerHTML = temporal;
 
-      const dateRangeCell = document.createElement("td");
+      dateRangeCell = document.createElement("td");
       dateRangeCell.innerHTML = dateRange;
 
-      const pathCell = document.createElement("td");
+      pathCell = document.createElement("td");
       pathCell.innerHTML = path;
 
       row.appendChild(locationCell);
@@ -103,6 +105,13 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         for (const tr of rows)
             tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
     };
+
+    document.getElementById("txtSearchStandaloneMetadata").onkeyup = e => {
+        const rows = document.querySelectorAll("#metadataStandalone tbody tr");
+        for (const tr of rows)
+            tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
+    };
+
 
 
     const jsonData = [
