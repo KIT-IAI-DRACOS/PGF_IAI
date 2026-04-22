@@ -59,8 +59,8 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
       location=data.spatial.location.address;
       country=data.spatial.extent.name;
-      temporal=${data.temporal.timeseries[0].resolutionValue}${data.temporal.timeseries[0].resolutionUnit};
-      dateRange=${data.temporal.timeseries[0].start}-${data.temporal.timeseries[0].end};
+      temporal=`${data.temporal.timeseries[0].resolutionValue}${data.temporal.timeseries[0].resolutionUnit}`;
+      dateRange=`${data.temporal.timeseries[0].start}-${data.temporal.timeseries[0].end}`;
       path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
 
       const row = document.createElement("tr");
