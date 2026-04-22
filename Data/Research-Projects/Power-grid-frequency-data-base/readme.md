@@ -87,7 +87,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       tbody.appendChild(row);
     }
 
-    populateTable();
+    loadMetadata();
     // fetch("./assets/files/iceland.json")
     //   .then(res => res.text())
     //   .then(text => {
