@@ -30,7 +30,7 @@ classes: wide
 
 <script src="assets/locations/locations.js"></script>
 
-<link rel="stylesheet" href="style/styles.css">
+<link rel="stylesheet" href="assets/style/styles.css">
 
 <script>
 
