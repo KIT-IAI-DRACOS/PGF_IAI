@@ -30,6 +30,8 @@ classes: wide
 
 <script src="assets/locations/locations.js"></script>
 
+<link rel="stylesheet" href="style/styles.css">
+
 <script>
 
 var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
