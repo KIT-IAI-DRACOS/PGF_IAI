@@ -1,5 +1,5 @@
 <img src="screenshot.png" title="Screenshot of the website" height="300"/>
-
+<link rel="stylesheet" href="assets/style/styles.css">
 # Power-Grid Frequency
 
 This repository is the front-end of the data repository in the Open Science Framework [Open Access Power-Grid Frequency Database](https://osf.io/m43tg/). The website [Power-Grid Frequency Database](https://lrydin.github.io/Power-Grid-Frequency/) contains all the relevant information on the content of this database. Thus, you will not find the data in this GitHub repository. Visit the website of the OSF to access the data.

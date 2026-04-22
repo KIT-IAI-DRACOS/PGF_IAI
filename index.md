@@ -30,6 +30,8 @@ classes: wide
 
 <script src="assets/locations/locations.js"></script>
 
+
+
 <script>
 
 var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -37,7 +39,6 @@ var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
     'minZoom': 2,
     'maxZoom': 19
   });
-
 
 var LeafIcon = L.Icon.extend({
     options: {

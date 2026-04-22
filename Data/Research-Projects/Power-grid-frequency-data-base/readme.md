@@ -34,14 +34,86 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     </tbody>
   </table>
 
+<label for="txtSearchStandaloneMetadata">Enter text to search the table</label>
+<input type="input" id="txtSearchStandaloneMetadata" name="txtSearchStandaloneMetadata"/>
+  <table id="metadataStandalone" style="width: 980px">
+   <thead>
+      <tr>
+        <th>Location</th>
+        <th>Country</th>
+        <th>Resolution</th>
+        <th>Date Range</th>
+        <th>Path</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+
+
   <script>
 
+    async function loadMetadata() {
+      const response = await fetch("./../assets/files/iceland.json");
+      const data = await response.json();
+
+      const tbody = document.querySelector("#metadataStandalone tbody");
+      tbody.innerHTML = "";
+
+      locationValue=`<label>${data.spatial.location.address}</label>`;
+      country=`<label>${data.spatial.extent.name}</label>`;
+      temporal=`<label>${data.temporal.timeseries[0].resolutionValue}</label>`;
+      dateRange=`<label>${data.temporal.timeseries[0].start}<br/>${data.temporal.timeseries[0].end}</label>`; 
+      path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
+
+      row = document.createElement("tr"); 
+
+      [row, locationValue, country, temporal, path];
+
+      locationCell = document.createElement("td");
+      locationCell.innerHTML = locationValue;
+
+      countryCell = document.createElement("td");
+      countryCell.innerHTML = country;
+
+      temporalCell = document.createElement("td");
+      temporalCell.innerHTML = temporal;
+
+      dateRangeCell = document.createElement("td");
+      dateRangeCell.innerHTML = dateRange;
+
+      pathCell = document.createElement("td");
+      pathCell.innerHTML = path;
+
+      row.appendChild(locationCell);
+      row.appendChild(countryCell);
+      row.appendChild(temporalCell);
+      row.appendChild(dateRangeCell);
+      row.appendChild(pathCell);
+
+      tbody.appendChild(row);
+    }
+
+    loadMetadata();
+    // fetch("./assets/files/iceland.json")
+    //   .then(res => res.text())
+    //   .then(text => {
+    //     document.getElementById("output").textContent = text;
+    // });
     
     document.getElementById("txtSearchStandalone").onkeyup = e => {
         const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
         for (const tr of rows)
             tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
     };
+
+    document.getElementById("txtSearchStandaloneMetadata").onkeyup = e => {
+        const rows = document.querySelectorAll("#metadataStandalone tbody tr");
+        for (const tr of rows)
+            tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
+    };
+
+
 
     const jsonData = [
       { "location": "Reykjavík", "country": "Iceland", "synchronousArea": "Icelandic Grid", "Resolution":"1 sec", "dateRange":" 2017-10-14 - 2017-10-20", "noOfDays":"5.6","link":"<a href='https://osf.io/sxph8/download'>OSF link</a>", "size":"15.4"},
