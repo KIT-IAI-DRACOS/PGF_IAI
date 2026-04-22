@@ -1,4 +1,4 @@
-table {
+#metadataStandalone {
   width: 100%;
   border-collapse: collapse;
   font-family: "Segoe UI", Roboto, sans-serif;
@@ -7,12 +7,12 @@ table {
   overflow: hidden;
 }
 
-table thead {
+#metadataStandalone thead {
   background: #6995e1;
   color: #2b2b2b;
 }
 
-table th {
+#metadataStandalone th {
   text-align: left;
   padding: 14px 16px;
   font-size: 18px;
@@ -20,24 +20,24 @@ table th {
   border-bottom: 2px solid #6995e1;
 }
 
-table td {
+#metadataStandalone td {
   padding: 14px 16px;
   font-size: 17px;
   color: #333;
   border-bottom: 1px solid #e5e5e5;
 }
 
-table tbody tr:hover {
+#metadataStandalone tbody tr:hover {
   background-color: #f7f5ef;
   transition: background 0.2s ease;
 }
 
-table a {
+#metadataStandalone a {
   color: #2a6f97;
   text-decoration: none;
   font-weight: 500;
 }
 
-table a:hover {
+#metadataStandalone a:hover {
   text-decoration: underline;
 }
