@@ -234,6 +234,6 @@ slider.noUiSlider.on('update', function (values, handle) {
 
 </script>
 
-
+<div style="margin-top:3em"></div>
 
 {% include_relative details.md %}
