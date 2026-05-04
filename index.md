@@ -53,13 +53,13 @@ var LeafIcon = L.Icon.extend({
     }
 });
 
-var blueIcon = new LeafIcon(),
-    greenIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-green.png'}),
-    purpleIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-purple.png'}),
-    greenpurpleIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-green-purple.png'}),
-    bluepurpleIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-blue-purple.png'}),
-    greenblueIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-green-blue.png'}),
-    yellowIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-yellow.png'});
+// var blueIcon = new LeafIcon(),
+//     greenIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-green.png'}),
+//     purpleIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-purple.png'}),
+//     greenpurpleIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-green-purple.png'}),
+//     bluepurpleIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-blue-purple.png'}),
+//     greenblueIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-green-blue.png'}),
+//     yellowIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-yellow.png'});
 
 var yellowTarget = L.icon({
     iconUrl: 'assets/js/images/marker-target-yellow.png',
@@ -72,13 +72,6 @@ var yellowTarget = L.icon({
 });
 
 const colIcons = {
-    "Blue": blueIcon,
-    "Green": greenIcon,
-    "Purple": purpleIcon,
-    "GreenPurple": greenpurpleIcon,
-    "BluePurple": bluepurpleIcon,
-    "GreenBlue": greenblueIcon,
-    "Yellow": yellowIcon,
     "YellowTarget": yellowTarget
 };
 
