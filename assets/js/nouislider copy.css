@@ -82,42 +82,41 @@
 /* Slider size and handle placement;
  */
 .noUi-horizontal {
-  height: 6px;
+  height: 18px;
 }
 .noUi-horizontal .noUi-handle {
-  width: 22px;
-  height: 22px;
-  right: -11px;
-  top: -8px;
-  border-radius: 50%;
+  width: 34px;
+  height: 28px;
+  right: -17px;
+  top: -6px;
 }
 .noUi-vertical {
-  width: 6px;
+  width: 18px;
 }
 .noUi-vertical .noUi-handle {
-  width: 22px;
-  height: 22px;
-  right: -8px;
-  bottom: -11px;
-  border-radius: 50%;
+  width: 28px;
+  height: 34px;
+  right: -6px;
+  bottom: -17px;
 }
 .noUi-txt-dir-rtl.noUi-horizontal .noUi-handle {
-  left: -11px;
+  left: -17px;
   right: auto;
 }
 /* Styling;
+ * Giving the connect element a border radius causes issues with using transform: scale
  */
 .noUi-target {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  border: none;
-  box-shadow: none;
+  background: #FAFAFA;
+  border-radius: 4px;
+  border: 1px solid #D3D3D3;
+  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
 }
 .noUi-connects {
-  border-radius: 10px;
+  border-radius: 3px;
 }
 .noUi-connect {
-  background: linear-gradient(to right, #6366f1, #3b82f6);
+  background: #3FB8AF;
 }
 /* Handles and cursors;
  */
@@ -128,26 +127,40 @@
   cursor: ns-resize;
 }
 .noUi-handle {
-  border: none;
-  border-radius: 50%;
-  background: #fff;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 0 3px #6366f1;
-  -webkit-transition: box-shadow 0.15s ease;
-  transition: box-shadow 0.15s ease;
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  background: #FFF;
+  cursor: default;
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB;
 }
 .noUi-active {
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.5), 0 0 0 4px #6366f1;
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
 }
-/* Handle stripes removed for clean circular design;
+/* Handle stripes;
  */
 .noUi-handle:before,
 .noUi-handle:after {
-  display: none;
+  content: "";
+  display: block;
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  background: #E8E7E6;
+  left: 14px;
+  top: 6px;
+}
+.noUi-handle:after {
+  left: 17px;
 }
 .noUi-vertical .noUi-handle:before,
 .noUi-vertical .noUi-handle:after {
-  display: none;
+  width: 14px;
+  height: 1px;
+  left: 6px;
+  top: 14px;
+}
+.noUi-vertical .noUi-handle:after {
+  top: 17px;
 }
 /* Disabled state;
  */
@@ -169,18 +182,15 @@
 }
 .noUi-pips {
   position: absolute;
-  color: #6b7280;
+  color: #999;
 }
 /* Values;
  *
  */
- 
 .noUi-value {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 12px;
-  font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  letter-spacing: 0.02em;
+  position: absolute;
+  white-space: nowrap;
+  text-align: center;
 }
 .noUi-value-sub {
   color: #ccc;
@@ -190,13 +200,14 @@
  *
  */
 .noUi-marker {
-  background: rgba(255, 255, 255, 0.35);
+  position: absolute;
+  background: #CCC;
 }
 .noUi-marker-sub {
-  background: #9ca3af;
+  background: #AAA;
 }
 .noUi-marker-large {
-  background: rgba(255, 255, 255, 0.6);
+  background: #AAA;
 }
 /* Horizontal layout;
  *
@@ -290,33 +301,4 @@
   transform: translate(0, -18px);
   top: auto;
   right: 28px;
-}
-
-.wrapper {
-  position: relative;
-  width: 100%;
-  height: 500px;
-}
-
-#map {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-#slider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 0;
-  padding: 16px 32px 36px;
-  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.10);
 }
