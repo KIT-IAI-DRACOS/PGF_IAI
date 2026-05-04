@@ -13,6 +13,7 @@ classes: wide
   <div id="slider"></div>
 </div>
 
+
 <script type="text/javascript" src="assets/GeoJSON/WesternInterconnection.js"></script>
 <script type="text/javascript" src="assets/GeoJSON/TexasInterconnection.js"></script>
 <script type="text/javascript" src="assets/GeoJSON/NordicGrid.js"></script>
@@ -233,6 +234,6 @@ slider.noUiSlider.on('update', function (values, handle) {
 
 </script>
 
-
+<div style="margin-top:4em"></div>
 
 {% include_relative details.md %}
