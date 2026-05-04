@@ -118,7 +118,12 @@ const years = {
   "2018": L.layerGroup(),
   "2019": L.layerGroup(),
   "2020": L.layerGroup(),
-  "2021": L.layerGroup()
+  "2021": L.layerGroup(),
+  "2022": L.layerGroup(),
+  "2023": L.layerGroup(),
+  "2024": L.layerGroup(),
+  "2025": L.layerGroup(),
+  "2026": L.layerGroup()
 };
 
 L.geoJSON(locations, {
@@ -192,10 +197,7 @@ legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 10, 20, 50, 100, 200, 500, 1000],
         labels = [];
-    div.innerHTML = '<img id="x" src="assets/js/images/marker-icon-purple.png" width="20" height="20"/>' + '<h9>  Synchronous Measurements</h9></br>' +
-		'<img id="x" src="assets/js/images/marker-icon-green.png" width="20" height="20"/>' + '<h9>  Standalone Measurements</h9></br>' +
-		'<img id="x" src="assets/js/images/marker-icon.png" width="20" height="20"/>' + '<h9>  TSO Open Data Measurements</h9></br>'+
-		'<img id="x" src="assets/js/images/marker-icon-yellow.png" width="20" height="20"/>' + '/' + '<img id="x" src="assets/js/images/marker-target-yellow.png" width="30" height="30"/>' + '<h9>  Independent Measurements</h9>';
+    div.innerHTML = '<img id="x" src="assets/js/images/marker-target-yellow.png" width="30" height="30"/>' + '<h9>  Independent Measurements</h9>';
     return div;
 };
 
@@ -205,13 +207,13 @@ info.addTo(map);
 // Slider
 var slider = document.getElementById('slider');
 noUiSlider.create(slider, {
-    start: [2011, 2021], // Handle start position
+    start: [2011, 2026], // Handle start position
     connect: true, // Display a colored bar between the handles
     step: 1, // Steps shown, i.e., year by year
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
     range: { // Slider can select '0' to '100'
         'min': 2011,
-        'max': 2021
+        'max': 2026
     },
     pips: { // Show a scale with the slider
         mode: 'steps',
