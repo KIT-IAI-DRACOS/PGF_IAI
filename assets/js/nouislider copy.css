@@ -174,10 +174,13 @@
 /* Values;
  *
  */
+ 
 .noUi-value {
-  position: absolute;
-  white-space: nowrap;
-  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: 0.02em;
 }
 .noUi-value-sub {
   color: #ccc;
@@ -187,14 +190,13 @@
  *
  */
 .noUi-marker {
-  position: absolute;
-  background: #d1d5db;
+  background: rgba(255, 255, 255, 0.35);
 }
 .noUi-marker-sub {
   background: #9ca3af;
 }
 .noUi-marker-large {
-  background: #9ca3af;
+  background: rgba(255, 255, 255, 0.6);
 }
 /* Horizontal layout;
  *
@@ -288,4 +290,33 @@
   transform: translate(0, -18px);
   top: auto;
   right: 28px;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+#map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 0;
+  padding: 16px 32px 36px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.10);
 }
