@@ -155,9 +155,6 @@ var SemiSynchMeasurements = [[[49.0,  8.4],[46.6,  21.0]],[[49.0,  8.4],[47.6,  
 var SemiSynchMeasurementsNG = [[[63.126178, 15.205319],[66.353562, 19.323426]], [[63.126178, 15.205319],[58.310608, 14.511484]]];
 var SemiSynchMeasurementsNGSTRONG = [[[59.350029, 18.070009],[57.689769, 11.973701]], [[59.350029, 18.070009],[55.711850, 13.210120]], [[59.350029, 18.070009],[65.617792, 22.135986]], [[59.350029, 18.070009],[61.494200, 23.780750]], [[59.350029, 18.070009],[60.186463, 24.829515]], [[59.350029, 18.070009],[63.419443, 10.401995]]];
 
-years['2013'].addLayer(L.polyline(SemiSynchMeasurementsNGSTRONG, {color: 'purple', dashArray: '6', className: 'line-transition'}).bindPopup("Synchronous recordings from Gothenburg, Lund, Stockholm, and Luleå, Sweden, Tampere and Aalto, Finland, and Trondheim, Norway"))
-years['2019'].addLayer(L.polyline(SynchMeasurements, {color: 'purple', className: 'line-transition'}).bindPopup("GPS-Synchronous recordings from Karlsruhe, Oldenburg, Lisbon, and Istanbul. Also: Békéscsaba and Győr, Hungary, yet not GPS synchronised."))
-years['2019'].addLayer(L.polyline(SemiSynchMeasurements, {color: 'purple', dashArray: '6', className: 'line-transition'}).bindPopup("Measurements in Békéscsaba and Győr, Hungary, in the same time frame as between Karlsruhe, Oldenburg, Lisbon, and Istanbul."))
 years['2020'].addLayer(L.polyline(SemiSynchMeasurementsNG, {color: 'gold', dashArray: '6', className: 'line-transition'}).bindPopup("Measurements in the north, middle, and south of Sweden. Locations are indicative, due to data protection."))
 
 // Layers and layer control
