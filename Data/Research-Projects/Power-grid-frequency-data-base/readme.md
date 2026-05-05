@@ -159,7 +159,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       align-items: center;
       gap: 6px;
       padding: 8px 20px;
-      background: linear-gradient(135deg, #f1c866, #f6c982)
+      background: linear-gradient(135deg, #f1c866, #f6c982);
       color: #fff;
       border: none;
       border-radius: 6px;
