@@ -144,7 +144,7 @@ function iconBindPopup(feature, layer) {
     };
     if (feature.properties.icon === "Green") {
         layer.on('click', function() {
-            window.location.href = BASE_URL + '/database/###standalone-measurements';
+            window.location.href = BASE_URL + '/database/#standalone-measurements';
         });
     };
     Object.keys(years).forEach(function (item, index) {
