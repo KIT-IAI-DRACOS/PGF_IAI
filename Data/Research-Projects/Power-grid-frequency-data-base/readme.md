@@ -188,8 +188,8 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
       const base = (typeof BASE_URL !== 'undefined') ? BASE_URL : '';
       const [autocorr, histogram] = await Promise.all([
-        parseCSV(base + '/assets/files/ISO1_autocorr.csv'),
-        parseCSV(base + '/assets/files/ISO1_histogram.csv')
+        parseCSV('./../assets/files/ISO1_autocorr.csv'),
+        parseCSV('./../assets/files/ISO1_histogram.csv')
       ]);
 
       document.getElementById('divAnalysis').style.display = 'block';
