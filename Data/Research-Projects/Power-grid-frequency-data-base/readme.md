@@ -44,6 +44,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         <th>Resolution</th>
         <th>Date Range</th>
         <th>Path</th>
+        <th>Analysis</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -65,6 +66,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       temporal=`<label>${data.temporal.timeseries[0].resolutionValue}</label>`;
       dateRange=`<label>${data.temporal.timeseries[0].start}<br/>${data.temporal.timeseries[0].end}</label>`; 
       path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
+      analysis=`<button>Analysis</button>`;
 
       row = document.createElement("tr"); 
 
@@ -85,11 +87,15 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       pathCell = document.createElement("td");
       pathCell.innerHTML = path;
 
+      analysisCell = document.createElement("td");
+      analysisCell.innerHTML = analysis;
+
       row.appendChild(locationCell);
       row.appendChild(countryCell);
       row.appendChild(temporalCell);
       row.appendChild(dateRangeCell);
       row.appendChild(pathCell);
+      row.appendChild(analysisCell);
 
       tbody.appendChild(row);
     }
