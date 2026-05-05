@@ -128,7 +128,7 @@ const years = {
 
 L.geoJSON(locations, {
     filter: function(feature) {
-        return feature.properties.icon === "YellowTarget";
+        return feature.properties.icon === "Green";
     },
     onEachFeature: iconBindPopup,
 }).addTo(map);
