@@ -66,7 +66,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       temporal=`<label>${data.temporal.timeseries[0].resolutionValue}</label>`;
       dateRange=`<label>${data.temporal.timeseries[0].start}<br/>${data.temporal.timeseries[0].end}</label>`; 
       path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
-      analysis=`<button id="btnAnalysis" onclick="runAnalysis()">Analysis</button>`;
+      analysis=`<button id="btnAnalysis" class="btnAnalysis" onclick="runAnalysis()">Analysis</button>`;
 
       row = document.createElement("tr"); 
 
@@ -154,7 +154,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
   </script>
 
   <style>
-    #btnAnalysis {
+    .btnAnalysis {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -168,9 +168,9 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       cursor: pointer;
       transition: opacity 0.2s, transform 0.1s;
     }
-    #btnAnalysis:hover { opacity: 0.88; transform: translateY(-1px); }
-    #btnAnalysis:active { transform: translateY(0); }
-    #btnAnalysis:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+    .btnAnalysis:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btnAnalysis:active { transform: translateY(0); }
+    .btnAnalysis:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
   </style>
 
   <br>
