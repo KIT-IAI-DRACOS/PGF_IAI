@@ -101,11 +101,6 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     }
 
     loadMetadata();
-    // fetch("./assets/files/iceland.json")
-    //   .then(res => res.text())
-    //   .then(text => {
-    //     document.getElementById("output").textContent = text;
-    // });
     
     document.getElementById("txtSearchStandalone").onkeyup = e => {
         const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
@@ -158,8 +153,27 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     });
   </script>
 
+  <style>
+    #btnAnalysis {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    #btnAnalysis:hover { opacity: 0.88; transform: translateY(-1px); }
+    #btnAnalysis:active { transform: translateY(0); }
+    #btnAnalysis:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+  </style>
+
   <br>
-  <button id="btnAnalysis" onclick="runAnalysis()">Analysis</button>
   <div id="divAnalysis" style="display:none;">
     <div id="plotAutocorr" style="width:100%; height:350px; margin-top:16px;"></div>
     <div id="plotHistogram" style="width:100%; height:350px; margin-top:16px;"></div>
