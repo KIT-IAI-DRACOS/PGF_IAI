@@ -66,7 +66,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       temporal=`<label>${data.temporal.timeseries[0].resolutionValue}</label>`;
       dateRange=`<label>${data.temporal.timeseries[0].start}<br/>${data.temporal.timeseries[0].end}</label>`; 
       path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
-      analysis=`<button>Analysis</button>`;
+      analysis=`<button id="btnAnalysis" onclick="runAnalysis()">Analysis</button>`;
 
       row = document.createElement("tr"); 
 
@@ -156,6 +156,76 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         }
       });
     });
+  </script>
+
+  <br>
+  <button id="btnAnalysis" onclick="runAnalysis()">Analysis</button>
+  <div id="divAnalysis" style="display:none;">
+    <div id="plotAutocorr" style="width:100%; height:350px; margin-top:16px;"></div>
+    <div id="plotHistogram" style="width:100%; height:350px; margin-top:16px;"></div>
+  </div>
+
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script>
+    async function parseCSV(url) {
+      const res = await fetch(url);
+      const text = await res.text();
+      const lines = text.trim().split('\n');
+      const headers = lines[0].split(',').map(h => h.trim());
+      const cols = {};
+      headers.forEach(h => cols[h] = []);
+      for (let i = 1; i < lines.length; i++) {
+        const vals = lines[i].split(',');
+        headers.forEach((h, j) => cols[h].push(parseFloat(vals[j])));
+      }
+      return { headers, cols };
+    }
+
+    async function runAnalysis() {
+      const btn = document.getElementById('btnAnalysis');
+      btn.disabled = true;
+      btn.textContent = 'Loading...';
+
+      const base = (typeof BASE_URL !== 'undefined') ? BASE_URL : '';
+      const [autocorr, histogram] = await Promise.all([
+        parseCSV(base + '/assets/files/ISO1_autocorr.csv'),
+        parseCSV(base + '/assets/files/ISO1_histogram.csv')
+      ]);
+
+      document.getElementById('divAnalysis').style.display = 'block';
+
+      const acH = autocorr.headers;
+      Plotly.newPlot('plotAutocorr', [{
+        x: autocorr.cols[acH[0]],
+        y: autocorr.cols[acH[1]],
+        type: 'scatter',
+        mode: 'lines',
+        line: { color: '#6366f1', width: 2 },
+        name: acH[1]
+      }], {
+        title: { text: 'Autocorrelation', font: { size: 16 } },
+        xaxis: { title: acH[0] },
+        yaxis: { title: acH[1] },
+        margin: { t: 50, r: 20, b: 50, l: 60 }
+      }, { responsive: true });
+
+      const hH = histogram.headers;
+      Plotly.newPlot('plotHistogram', [{
+        x: histogram.cols[hH[0]],
+        y: histogram.cols[hH[1]],
+        type: 'bar',
+        marker: { color: '#3b82f6' },
+        name: hH[1]
+      }], {
+        title: { text: 'Histogram', font: { size: 16 } },
+        xaxis: { title: hH[0] },
+        yaxis: { title: hH[1] },
+        margin: { t: 50, r: 20, b: 50, l: 60 }
+      }, { responsive: true });
+
+      btn.textContent = 'Analysis';
+      btn.disabled = false;
+    }
   </script>
 
 
