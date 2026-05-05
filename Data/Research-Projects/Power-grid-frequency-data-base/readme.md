@@ -159,7 +159,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       align-items: center;
       gap: 6px;
       padding: 8px 20px;
-      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      background: linear-gradient(135deg, #f1c866, #f6c982)
       color: #fff;
       border: none;
       border-radius: 6px;
@@ -214,7 +214,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         y: autocorr.cols[acH[1]],
         type: 'scatter',
         mode: 'lines',
-        line: { color: '#6366f1', width: 2 },
+        line: { color: '#f19e63', width: 2 },
         name: acH[1]
       }], {
         title: { text: 'Autocorrelation', font: { size: 16 } },
@@ -228,7 +228,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         x: histogram.cols[hH[0]],
         y: histogram.cols[hH[1]],
         type: 'bar',
-        marker: { color: '#3b82f6' },
+        marker: { color: '#f63bb5' },
         name: hH[1]
       }], {
         title: { text: 'Histogram', font: { size: 16 } },
