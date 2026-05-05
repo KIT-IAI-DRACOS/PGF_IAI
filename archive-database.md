@@ -51,3 +51,44 @@ df = pd.read_csv('path/to/germany_2017_01.csv.zip', index_col=0)
 ### Great Britain
 
 {% include_relative /Data/National-Grid/Great-Britain/readme.md %}
+
+## Aces
+
+### Denmark, Continental Europe
+
+{% include_relative /Data/Research-Projects/ACES/Denmark/readmeCE.md %}
+
+### Denmark, Nordic Grid
+
+{% include_relative /Data/Research-Projects/ACES/Denmark/readmeNG.md %}
+
+### Japan, Japanese 50Hz Grid
+
+{% include_relative /Data/Research-Projects/ACES/Japan/Japanese50Hz/readmeJapan.md %}
+
+# Independent measurements
+
+## Continental Europe
+
+### Hungary
+
+{% include_relative /Data/Research-Projects/Hungary/readme.md %}
+
+### Germany
+
+{% include_relative /Data/Research-Projects/WETI/readme.md %}
+
+## Nordic Grid
+
+### Synchronised measurements
+
+{% include_relative /Data/Research-Projects/STRONg2rid/readme.md %}
+
+### Sweden
+
+{% include_relative /Data/Nordic-Grid/Sweden/readme.md %}
+
+### Ireland
+
+{% include_relative /Data/Research-Projects/Ireland/readme.md %}
+
