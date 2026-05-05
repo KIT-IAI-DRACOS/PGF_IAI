@@ -142,6 +142,11 @@ function iconBindPopup(feature, layer) {
     if (feature.properties.icon) {
         layer.setIcon(colIcons[feature.properties.icon]);
     };
+    if (feature.properties.icon === "Green") {
+        layer.on('click', function() {
+            window.location.href = BASE_URL + '/database/#standalone-measurements';
+        });
+    };
     Object.keys(years).forEach(function (item, index) {
       if (layer.options.start_date <= parseInt(item) && layer.options.end_date >= parseInt(item)) {
         layer.addTo(years[item]);

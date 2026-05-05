@@ -13,6 +13,8 @@ toc_icon: "cog"
 
 The target is to collect, process, and document all available power-grid frequency data publicly available and make it research ready.
 
+# Standalone Measurements
+
 # Research projects open data
 
 ## Power grid frequency data base
