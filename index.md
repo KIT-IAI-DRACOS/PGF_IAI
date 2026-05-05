@@ -207,12 +207,12 @@ info.addTo(map);
 // Slider
 var slider = document.getElementById('slider');
 noUiSlider.create(slider, {
-    start: [2018, 2026], // Handle start position
+    start: [2017, 2026], // Handle start position
     connect: true, // Display a colored bar between the handles
     step: 1, // Steps shown, i.e., year by year
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
     range: { // Slider can select '0' to '100'
-        'min': 2018,
+        'min': 2017,
         'max': 2026
     },
     pips: { // Show a scale with the slider
