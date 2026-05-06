@@ -9,7 +9,10 @@ layout: splash
 classes: wide
 ---
 <div class="wrapper">
-  <div id="map" class="leafmap" style="border: 1px solid #ccc"></div>
+  <div id="map" style="border: 1px solid #ccc;">
+    <div class="map-info-box" id="map-info"><strong>Synchronous Areas</strong><br>Hover over an area</div>
+    <div class="map-legend-box" id="map-legend"></div>
+  </div>
   <div id="slider"></div>
 </div>
 
@@ -31,214 +34,114 @@ classes: wide
 
 <script src="assets/locations/locations.js"></script>
 
-
-
 <script>
+const map = new maplibregl.Map({
+  container: 'map',
+  style: 'https://tiles.openfreemap.org/styles/liberty',
+  center: [-5, 35],
+  zoom: 2,
+  minZoom: 2
+});
 
-var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    'attribution': '&copy; <a href="https://osmlab.github.io/attribution-mark/copyright/?name={{ site.title }}">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Made with <a href="https://www.naturalearthdata.com/">Natural Earth</a>',
-    'minZoom': 2,
-    'maxZoom': 19
+const geoRegions = [
+  ['western-interconnection', () => WesternInterconnectionGeo],
+  ['texas-interconnection',   () => TexasInterconnectionGeo],
+  ['nordic-grid',             () => NordicGridGeo],
+  ['russian',                 () => RussianGeo],
+  ['baltic',                  () => BalticGeo],
+  ['national-grid',           () => NationalGridGeo],
+  ['continental-europe',      () => ContinentalEuropeGeo],
+  ['irish',                   () => IrishGeo],
+  ['iceland',                 () => IcelandGeo],
+  ['faroe',                   () => FaroeGeo],
+  ['mallorca',                () => MallorcaGeo],
+  ['gran-canaria',            () => GranCanariaGeo],
+  ['south-africa',            () => SouthAfricaGeo],
+  ['japan',                   () => JapanGeo],
+];
+
+function prepareGeo(data) {
+  return {
+    ...data,
+    features: data.features.map(f => ({
+      ...f,
+      properties: { ...f.properties, colour: f.colour || '#3388ff' }
+    }))
+  };
+}
+
+const allMarkers = [];
+const infoEl  = document.getElementById('map-info');
+const legendEl = document.getElementById('map-legend');
+
+map.on('load', function() {
+  const fillLayers = [];
+
+  geoRegions.forEach(([id, getData]) => {
+    map.addSource(id, { type: 'geojson', data: prepareGeo(getData()) });
+    map.addLayer({
+      id: id + '-fill',
+      type: 'fill',
+      source: id,
+      paint: {
+        'fill-color': ['get', 'colour'],
+        'fill-opacity': 0.4
+      }
+    });
+    fillLayers.push(id + '-fill');
   });
 
-var LeafIcon = L.Icon.extend({
-    options: {
-        iconUrl: 'assets/js/images/marker-icon.png',
-        shadowUrl: 'assets/js/images/marker-shadow.png',
-        iconSize:    [25, 41],
-    		iconAnchor:  [12, 41],
-    		popupAnchor: [1, -34],
-    		tooltipAnchor: [16, -28],
-    		shadowSize:  [41, 41]
-    }
-});
-
-var blueIcon = new LeafIcon(),
-    greenIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-green.png'}),
-    purpleIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-purple.png'}),
-    greenpurpleIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-green-purple.png'}),
-    bluepurpleIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-blue-purple.png'}),
-    greenblueIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-green-blue.png'}),
-    yellowIcon = new LeafIcon({iconUrl: 'assets/js/images/marker-icon-yellow.png'});
-
-var yellowTarget = L.icon({
-    iconUrl: 'assets/js/images/marker-target-yellow.png',
-    shadowUrl: 'assets/js/images/marker-target-shadow.png',
-		iconSize:    [25, 25],
-		iconAnchor:  [12, 12],
-		popupAnchor: [1, -14],
-		tooltipAnchor: [16, -28],
-		shadowSize:  [27, 27]
-});
-
-const colIcons = {
-    "Blue": blueIcon,
-    "Green": greenIcon,
-    "Purple": purpleIcon,
-    "GreenPurple": greenpurpleIcon,
-    "BluePurple": bluepurpleIcon,
-    "GreenBlue": greenblueIcon,
-    "Yellow": yellowIcon,
-    "YellowTarget": yellowTarget
-};
-
-// Deploy  
-
-var map = L.map('map', {
-  'center': [35, -5],
-  'zoom': 2,
-  'layers': [basemap]
-});
-
-// GeoJSONs
-
-L.geoJson(WesternInterconnectionGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(TexasInterconnectionGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(NordicGridGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(RussianGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(BalticGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(NationalGridGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(ContinentalEuropeGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(IrishGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(IcelandGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(FaroeGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(MallorcaGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(GranCanariaGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(SouthAfricaGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-L.geoJson(JapanGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
-
-const years = {
-  "2011": L.layerGroup(),
-  "2012": L.layerGroup(),
-  "2013": L.layerGroup(),
-  "2014": L.layerGroup(),
-  "2015": L.layerGroup(),
-  "2016": L.layerGroup(),
-  "2017": L.layerGroup(),
-  "2018": L.layerGroup(),
-  "2019": L.layerGroup(),
-  "2020": L.layerGroup(),
-  "2021": L.layerGroup(),
-  "2022": L.layerGroup(),
-  "2023": L.layerGroup(),
-  "2024": L.layerGroup(),
-  "2025": L.layerGroup(),
-  "2026": L.layerGroup()
-};
-
-L.geoJSON(locations, {
-    filter: function(feature) {
-        return feature.properties.icon === "Green";
-    },
-    onEachFeature: iconBindPopup,
-}).addTo(map);
-
-function iconBindPopup(feature, layer) {
-    layer.options['start_date'] = feature.properties.start_date;
-    layer.options['end_date'] = feature.properties.end_date;
-    if (feature.properties && feature.properties.location) {
-        layer.bindPopup(feature.properties.logo + feature.properties.location);
-    };
-    if (feature.properties.icon) {
-        layer.setIcon(colIcons[feature.properties.icon]);
-    };
-    if (feature.properties.icon === "Green") {
-        layer.on('click', function() {
-            window.location.href = BASE_URL + '/database/#standalone-measurements';
-        });
-    };
-    Object.keys(years).forEach(function (item, index) {
-      if (layer.options.start_date <= parseInt(item) && layer.options.end_date >= parseInt(item)) {
-        layer.addTo(years[item]);
-      };
+  fillLayers.forEach(lid => {
+    map.on('mousemove', lid, e => {
+      map.getCanvas().style.cursor = 'pointer';
+      infoEl.innerHTML = '<strong>Synchronous Areas</strong><br><b>' + e.features[0].properties.name + '</b>';
     });
-}
-
-
-var SynchMeasurements = [[[49.0,  8.4],[53.1,  8.2]], [[49.0,  8.4],[38.7, -9.1]], [[49.0,  8.4],[41.0, 28.9]]];
-var SemiSynchMeasurements = [[[49.0,  8.4],[46.6,  21.0]],[[49.0,  8.4],[47.6,  17.6]]];
-var SemiSynchMeasurementsNG = [[[63.126178, 15.205319],[66.353562, 19.323426]], [[63.126178, 15.205319],[58.310608, 14.511484]]];
-var SemiSynchMeasurementsNGSTRONG = [[[59.350029, 18.070009],[57.689769, 11.973701]], [[59.350029, 18.070009],[55.711850, 13.210120]], [[59.350029, 18.070009],[65.617792, 22.135986]], [[59.350029, 18.070009],[61.494200, 23.780750]], [[59.350029, 18.070009],[60.186463, 24.829515]], [[59.350029, 18.070009],[63.419443, 10.401995]]];
-
-
-
-// Layers and layer control
-// var LayerOfMap = { "<span style='color: black'><b>OpenStreetMap</b></span>": basemap};
-// L.control.layers(LayerOfMap, years).addTo(map);
-
-// PowerGrid Overlay
-function style(feature) {
-    return {
-        fillColor: feature.colour,
-        weight: 0,
-        fillOpacity: 0.4
-    };
-}
-
-var info = L.control();
-info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-    this.update();
-    return this._div;
-};
-info.update = function (props) {
-    this._div.innerHTML = '<h9>Synchronous Areas</h9><br />' +  (props ?
-        '<b><h9>' + props.name + '</h9></b><br />'
-        : '<h9>Hover over an area</h9>');
-};
-
-function mouseOverFeature(feature, layer) {
-    layer.on({
-        mouseover: function(e) {
-        		var layer = e.target;
-            info.update(layer.feature.properties);
-        },
-        mouseout: function(e) { info.update(); }
+    map.on('mouseleave', lid, () => {
+      map.getCanvas().style.cursor = '';
+      infoEl.innerHTML = '<strong>Synchronous Areas</strong><br>Hover over an area';
     });
-}
+  });
 
-var legend = L.control({position: 'bottomleft'});
-legend.onAdd = function (map) {
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-        labels = [];
-    div.innerHTML = '<img id="x" src="assets/js/images/marker-icon-green.png" width="30" height="30"/>' + '<h9>  Standalone Measurements</h9>';
-    return div;
-};
+  legendEl.innerHTML = '<img src="' + BASE_URL + '/assets/js/images/marker-icon-green.png" width="18" height="30" style="vertical-align:middle"> Standalone Measurements';
 
-legend.addTo(map);
-info.addTo(map);
+  locations.features
+    .filter(f => f.properties.icon === 'Green')
+    .forEach(f => {
+      const p = f.properties;
+      const [lng, lat] = f.geometry.coordinates;
 
-// Slider
-var slider = document.getElementById('slider');
-noUiSlider.create(slider, {
-    start: [2017, 2026], // Handle start position
-    connect: true, // Display a colored bar between the handles
-    step: 1, // Steps shown, i.e., year by year
-    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: { // Slider can select '0' to '100'
-        'min': 2017,
-        'max': 2026
-    },
-    pips: { // Show a scale with the slider
-        mode: 'steps',
-        density: 6,
-    }
+      const el = document.createElement('div');
+      el.style.cssText = 'width:25px;height:41px;background:url(' + BASE_URL + '/assets/js/images/marker-icon-green.png) no-repeat center/contain;cursor:pointer;animation:fadein 1s;';
+
+      const marker = new maplibregl.Marker({ element: el }).setLngLat([lng, lat]);
+
+      el.addEventListener('click', function(e) {
+        e.stopPropagation();
+        window.location.href = BASE_URL + '/database/#standalone-measurements';
+      });
+
+      allMarkers.push({ marker, start_date: p.start_date, end_date: p.end_date });
+    });
+
+  var sliderEl = document.getElementById('slider');
+  noUiSlider.create(sliderEl, {
+    start: [2017, 2026],
+    connect: true,
+    step: 1,
+    behaviour: 'tap-drag',
+    range: { min: 2017, max: 2026 },
+    pips: { mode: 'steps', density: 6 }
+  });
+
+  sliderEl.noUiSlider.on('update', function() {
+    const t = sliderEl.noUiSlider.get(true);
+    allMarkers.forEach(({ marker, start_date, end_date }) => {
+      const visible = start_date <= t[1] && end_date >= t[0];
+      if (visible && !marker._map) marker.addTo(map);
+      else if (!visible && marker._map) marker.remove();
+    });
+  });
 });
-
-slider.noUiSlider.on('update', function (values, handle) {
-    let new_times = slider.noUiSlider.get(true);
-    Object.keys(years).forEach(function (item, index) {
-      map.removeLayer(years[item]);
-    });
-    Object.keys(years).forEach(function (item, index) {
-      if ( new_times[0] <= parseInt(item) && new_times[1] >= parseInt(item)) {
-        map.addLayer(years[item]);
-      };
-    });
-});
-
-
 </script>
 
 <div style="margin-top:4em"></div>
