@@ -66,7 +66,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       temporal=`<label>${data.temporal.timeseries[0].resolutionValue}</label>`;
       dateRange=`<label>${data.temporal.timeseries[0].start}<br/>${data.temporal.timeseries[0].end}</label>`; 
       path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
-      analysis=`<button id="btnAnalysis" class="btnAnalysis" onclick="runAnalysis()">Analysis</button>`;
+      analysis=`<button id="btnAnalysis" title="Analysis plot is from ${data.temporal.timeseries[0].start} to ${data.temporal.timeseries[0].end}" class="btnAnalysis" onclick="runAnalysis()">Analysis</button>`;
 
       row = document.createElement("tr"); 
 
