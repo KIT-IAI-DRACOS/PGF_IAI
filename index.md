@@ -102,6 +102,7 @@ map.on('load', function() {
     });
   });
 
+
   legendEl.innerHTML = '<img src="' + BASE_URL + '/assets/js/images/marker-icon-green.png" width="18" height="30" style="vertical-align:middle"> Standalone Measurements';
 
   locations.features
