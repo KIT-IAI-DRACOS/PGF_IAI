@@ -218,7 +218,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         name: acH[1]
       }], {
         title: { text: 'Autocorrelation', font: { size: 16 } },
-        xaxis: { title: acH[0] },
+        xaxis: { title: 'lag (s)' },
         yaxis: { title: acH[1] },
         margin: { t: 50, r: 20, b: 50, l: 60 }
       }, { responsive: true });
@@ -233,7 +233,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       }], {
         title: { text: 'Histogram', font: { size: 16 } },
         xaxis: { title: 'Frequency (Hz)' },
-        yaxis: { title: 'Occurences' },
+        yaxis: { title: 'Distributions' },
         margin: { t: 50, r: 20, b: 50, l: 60 }
       }, { responsive: true });
 
