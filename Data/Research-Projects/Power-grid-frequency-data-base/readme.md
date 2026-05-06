@@ -218,7 +218,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         name: acH[1]
       }], {
         title: { text: 'Autocorrelation', font: { size: 16 } },
-        xaxis: { title: 'lag (s)' },
+        xaxis: { title: 'lag (s)', dtick: 300 },
         yaxis: { title: acH[1] },
         margin: { t: 50, r: 20, b: 50, l: 60 }
       }, { responsive: true });
