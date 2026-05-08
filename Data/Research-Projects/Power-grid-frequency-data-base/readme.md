@@ -13,8 +13,6 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
 ### GPS-Synchronised measurements of the synchronization of the Baltic grid and the CE synchronous area
 
-Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) - 218 mb.
-
 | Location | Country | Synchronous Area | resolution |  date range | number of days | Link | size (gb)
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Berlin | Germany | Continental Europe | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/tcx6g/download) | 1.3
