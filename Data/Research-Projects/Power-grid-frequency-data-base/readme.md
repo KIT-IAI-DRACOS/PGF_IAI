@@ -212,16 +212,16 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       
       let autocorr_data;
       let histogram_data;
-      if (loc == 'iceland') {
+      if (loc === 'iceland') {
         autocorr_data = './../assets/files/IS01_autocorr.csv';
         histogram_data = './../assets/files/IS01_histogram.csv';
       } else {
-        const autocorr_data = 1;
-        const histogram_data = 5;
+        autocorr_data = 1;
+        histogram_data = 5;
       } 
       const [autocorr, histogram] = await Promise.all([
-        parseCSV(autocorr),
-        parseCSV(histogram)
+        parseCSV(autocorr_data),
+        parseCSV(histogram_data)
       ]);
 
       document.getElementById('divAnalysis').style.display = 'block';
