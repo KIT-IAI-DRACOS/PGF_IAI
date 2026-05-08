@@ -4,13 +4,23 @@ This is a set of 19 recordings in 12 synchronous regions, spanning from 1 day to
 
 Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) - 218 mb.
 
-| Location | Country | Synchronous Area | resolution |  date range | number of days |
+| Location | Country | Synchronous Area | resolution |  date range | number of days | 
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Karlsruhe | Germany | Continental Europe | 1 sec | 2019-07-09 - 2019-08-18 | 41.0 |
+| Karlsruhe | Germany | Continental Europe | 1 sec | 2019-07-09 - 2019-08-18 | 41.0 | 
 | Oldenburg | Germany | Continental Europe | 1 sec | 2019-07-10 - 2019-08-07 | 41.0 |
 | Istanbul | Turkey |  Continental Europe  | 1 sec | 2019-07-09 - 2019-08-18 | 41.0 |
 | Lisbon | Portugal |  Continental Europe  | 1 sec | 2019-07-09 - 2019-08-16 | 41.0 |
 
+### GPS-Synchronised measurements of the synchronization of the Baltic grid and the CE synchronous area
+
+Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) - 218 mb.
+
+| Location | Country | Synchronous Area | resolution |  date range | number of days | Link | size (gb)
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Berlin | Germany | Continental Europe | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/tcx6g/download) | 1.3
+| Elk | Poland | Continental Europe | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/28qre/download) | 1.3
+| Kaunas | Lithuania |  Baltic Grid/Continental Europe  | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/py9xg/download) | 1.3
+| Tallinn | Estonia |  Baltic GridContinental Europe  | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/n6pc8/download) | 1.3
 
 ### Standalone measurements
 
