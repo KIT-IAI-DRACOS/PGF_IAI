@@ -74,7 +74,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       temporal=`<label>${data.temporal.timeseries[0].resolutionValue}</label>`;
       dateRange=`<label>${data.temporal.timeseries[0].start}<br/>${data.temporal.timeseries[0].end}</label>`; 
       path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
-      analysis=`<button id="btnAnalysis" title="Analysis plot is from ${data.temporal.timeseries[0].start} to ${data.temporal.timeseries[0].end}" class="btnAnalysis" onclick="runAnalysis('iceland')">Analysis</button>`;
+      analysis=`<button id="btnAnalysis" title="Analysis plot is from ${data.temporal.timeseries[0].start} to ${data.temporal.timeseries[0].end}" class="btnAnalysis" onclick="runAnalysis('test')">Analysis</button>`;
 
       row = document.createElement("tr"); 
 
@@ -203,15 +203,22 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       return { headers, cols };
     }
 
-    async function runAnalysis() {
+    async function runAnalysis(loc) {
       const btn = document.getElementById('btnAnalysis');
       btn.disabled = true;
       btn.textContent = 'Loading...';
 
       const base = (typeof BASE_URL !== 'undefined') ? BASE_URL : '';
+      if (loc == 'iceland') {
+        const autocorr = './../assets/files/IS01_autocorr.csv';
+        const histogram = './../assets/files/IS01_histogram.csv';
+      } else {
+        const autocorr = 1;
+        const histogram = 5;
+      } 
       const [autocorr, histogram] = await Promise.all([
-        parseCSV('./../assets/files/IS01_autocorr.csv'),
-        parseCSV('./../assets/files/IS01_histogram.csv')
+        parseCSV(autocorr),
+        parseCSV(histogram)
       ]);
 
       document.getElementById('divAnalysis').style.display = 'block';
