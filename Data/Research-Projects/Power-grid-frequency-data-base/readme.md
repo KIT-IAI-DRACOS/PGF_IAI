@@ -226,21 +226,6 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
       document.getElementById('divAnalysis').style.display = 'block';
 
-      const acH = autocorr.headers;
-      Plotly.newPlot('plotAutocorr', [{
-        x: autocorr.cols[acH[0]],
-        y: autocorr.cols[acH[1]],
-        type: 'scatter',
-        mode: 'lines',
-        line: { color: '#f19e63', width: 2 },
-        name: acH[1]
-      }], {
-        title: { text: 'Autocorrelation', font: { size: 16 } },
-        xaxis: { title: 'lag (s)', dtick: 300 },
-        yaxis: { title: acH[1] },
-        margin: { t: 50, r: 20, b: 50, l: 60 }
-      }, { responsive: true });
-
       const hH = histogram.headers;
       Plotly.newPlot('plotHistogram', [{
         x: histogram.cols[hH[0]],
@@ -255,6 +240,21 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         margin: { t: 50, r: 20, b: 50, l: 60 }
       }, { responsive: true });
 
+      const acH = autocorr.headers;
+      Plotly.newPlot('plotAutocorr', [{
+        x: autocorr.cols[acH[0]],
+        y: autocorr.cols[acH[1]],
+        type: 'scatter',
+        mode: 'lines',
+        line: { color: '#f19e63', width: 2 },
+        name: acH[1]
+      }], {
+        title: { text: 'Autocorrelation', font: { size: 16 } },
+        xaxis: { title: 'lag (s)', dtick: 300 },
+        yaxis: { title: acH[1] },
+        margin: { t: 50, r: 20, b: 50, l: 60 }
+      }, { responsive: true });
+      
       btn.textContent = 'Analysis';
       btn.disabled = false;
     }
