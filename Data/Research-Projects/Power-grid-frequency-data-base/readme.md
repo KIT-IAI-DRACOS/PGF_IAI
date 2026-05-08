@@ -183,8 +183,8 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
   <br>
   <div id="divAnalysis" style="display:none;">
-    <div id="plotAutocorr" style="width:100%; height:350px; margin-top:16px;"></div>
     <div id="plotHistogram" style="width:100%; height:350px; margin-top:16px;"></div>
+    <div id="plotAutocorr" style="width:100%; height:350px; margin-top:16px;"></div>
   </div>
 
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
