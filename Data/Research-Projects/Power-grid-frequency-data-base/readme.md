@@ -219,9 +219,9 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         autocorr_data = 1;
         histogram_data = 5;
       } 
-      const [autocorr, histogram] = await Promise.all([
-        parseCSV(autocorr_data),
-        parseCSV(histogram_data)
+      const [histogram, autocorr] = await Promise.all([
+        parseCSV(histogram_data),
+        parseCSV(autocorr_data)
       ]);
 
       document.getElementById('divAnalysis').style.display = 'block';
