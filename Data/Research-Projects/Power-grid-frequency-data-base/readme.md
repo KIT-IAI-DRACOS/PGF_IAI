@@ -44,6 +44,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         <th>Resolution</th>
         <th>Date Range</th>
         <th>Path</th>
+        <th>Analysis</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -65,6 +66,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       temporal=`<label>${data.temporal.timeseries[0].resolutionValue}</label>`;
       dateRange=`<label>${data.temporal.timeseries[0].start}<br/>${data.temporal.timeseries[0].end}</label>`; 
       path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
+      analysis=`<button id="btnAnalysis" title="Analysis plot is from ${data.temporal.timeseries[0].start} to ${data.temporal.timeseries[0].end}" class="btnAnalysis" onclick="runAnalysis()">Analysis</button>`;
 
       row = document.createElement("tr"); 
 
@@ -85,21 +87,20 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       pathCell = document.createElement("td");
       pathCell.innerHTML = path;
 
+      analysisCell = document.createElement("td");
+      analysisCell.innerHTML = analysis;
+
       row.appendChild(locationCell);
       row.appendChild(countryCell);
       row.appendChild(temporalCell);
       row.appendChild(dateRangeCell);
       row.appendChild(pathCell);
+      row.appendChild(analysisCell);
 
       tbody.appendChild(row);
     }
 
     loadMetadata();
-    // fetch("./assets/files/iceland.json")
-    //   .then(res => res.text())
-    //   .then(text => {
-    //     document.getElementById("output").textContent = text;
-    // });
     
     document.getElementById("txtSearchStandalone").onkeyup = e => {
         const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
@@ -150,6 +151,95 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         }
       });
     });
+  </script>
+
+  <style>
+    .btnAnalysis {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      background: linear-gradient(135deg, #f1c866, #f6c982);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    .btnAnalysis:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btnAnalysis:active { transform: translateY(0); }
+    .btnAnalysis:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+  </style>
+
+  <br>
+  <div id="divAnalysis" style="display:none;">
+    <div id="plotAutocorr" style="width:100%; height:350px; margin-top:16px;"></div>
+    <div id="plotHistogram" style="width:100%; height:350px; margin-top:16px;"></div>
+  </div>
+
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script>
+    async function parseCSV(url) {
+      const res = await fetch(url);
+      const text = await res.text();
+      const lines = text.trim().split('\n');
+      const headers = lines[0].split(',').map(h => h.trim());
+      const cols = {};
+      headers.forEach(h => cols[h] = []);
+      for (let i = 1; i < lines.length; i++) {
+        const vals = lines[i].split(',');
+        headers.forEach((h, j) => cols[h].push(parseFloat(vals[j])));
+      }
+      return { headers, cols };
+    }
+
+    async function runAnalysis() {
+      const btn = document.getElementById('btnAnalysis');
+      btn.disabled = true;
+      btn.textContent = 'Loading...';
+
+      const base = (typeof BASE_URL !== 'undefined') ? BASE_URL : '';
+      const [autocorr, histogram] = await Promise.all([
+        parseCSV('./../assets/files/IS01_autocorr.csv'),
+        parseCSV('./../assets/files/IS01_histogram.csv')
+      ]);
+
+      document.getElementById('divAnalysis').style.display = 'block';
+
+      const acH = autocorr.headers;
+      Plotly.newPlot('plotAutocorr', [{
+        x: autocorr.cols[acH[0]],
+        y: autocorr.cols[acH[1]],
+        type: 'scatter',
+        mode: 'lines',
+        line: { color: '#f19e63', width: 2 },
+        name: acH[1]
+      }], {
+        title: { text: 'Autocorrelation', font: { size: 16 } },
+        xaxis: { title: 'lag (s)', dtick: 300 },
+        yaxis: { title: acH[1] },
+        margin: { t: 50, r: 20, b: 50, l: 60 }
+      }, { responsive: true });
+
+      const hH = histogram.headers;
+      Plotly.newPlot('plotHistogram', [{
+        x: histogram.cols[hH[0]],
+        y: histogram.cols[hH[1]],
+        type: 'bar',
+        marker: { color: '#f63bb5' },
+        name: hH[1]
+      }], {
+        title: { text: 'Histogram', font: { size: 16 } },
+        xaxis: { title: 'Frequency (Hz)' },
+        yaxis: { title: 'Distributions' },
+        margin: { t: 50, r: 20, b: 50, l: 60 }
+      }, { responsive: true });
+
+      btn.textContent = 'Analysis';
+      btn.disabled = false;
+    }
   </script>
 
 

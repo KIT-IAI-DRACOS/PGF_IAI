@@ -118,10 +118,18 @@ const years = {
   "2018": L.layerGroup(),
   "2019": L.layerGroup(),
   "2020": L.layerGroup(),
-  "2021": L.layerGroup()
+  "2021": L.layerGroup(),
+  "2022": L.layerGroup(),
+  "2023": L.layerGroup(),
+  "2024": L.layerGroup(),
+  "2025": L.layerGroup(),
+  "2026": L.layerGroup()
 };
 
 L.geoJSON(locations, {
+    filter: function(feature) {
+        return feature.properties.icon === "Green";
+    },
     onEachFeature: iconBindPopup,
 }).addTo(map);
 
@@ -133,6 +141,11 @@ function iconBindPopup(feature, layer) {
     };
     if (feature.properties.icon) {
         layer.setIcon(colIcons[feature.properties.icon]);
+    };
+    if (feature.properties.icon === "Green") {
+        layer.on('click', function() {
+            window.location.href = BASE_URL + '/database/#standalone-measurements';
+        });
     };
     Object.keys(years).forEach(function (item, index) {
       if (layer.options.start_date <= parseInt(item) && layer.options.end_date >= parseInt(item)) {
@@ -147,10 +160,7 @@ var SemiSynchMeasurements = [[[49.0,  8.4],[46.6,  21.0]],[[49.0,  8.4],[47.6,  
 var SemiSynchMeasurementsNG = [[[63.126178, 15.205319],[66.353562, 19.323426]], [[63.126178, 15.205319],[58.310608, 14.511484]]];
 var SemiSynchMeasurementsNGSTRONG = [[[59.350029, 18.070009],[57.689769, 11.973701]], [[59.350029, 18.070009],[55.711850, 13.210120]], [[59.350029, 18.070009],[65.617792, 22.135986]], [[59.350029, 18.070009],[61.494200, 23.780750]], [[59.350029, 18.070009],[60.186463, 24.829515]], [[59.350029, 18.070009],[63.419443, 10.401995]]];
 
-years['2013'].addLayer(L.polyline(SemiSynchMeasurementsNGSTRONG, {color: 'purple', dashArray: '6', className: 'line-transition'}).bindPopup("Synchronous recordings from Gothenburg, Lund, Stockholm, and Luleå, Sweden, Tampere and Aalto, Finland, and Trondheim, Norway"))
-years['2019'].addLayer(L.polyline(SynchMeasurements, {color: 'purple', className: 'line-transition'}).bindPopup("GPS-Synchronous recordings from Karlsruhe, Oldenburg, Lisbon, and Istanbul. Also: Békéscsaba and Győr, Hungary, yet not GPS synchronised."))
-years['2019'].addLayer(L.polyline(SemiSynchMeasurements, {color: 'purple', dashArray: '6', className: 'line-transition'}).bindPopup("Measurements in Békéscsaba and Győr, Hungary, in the same time frame as between Karlsruhe, Oldenburg, Lisbon, and Istanbul."))
-years['2020'].addLayer(L.polyline(SemiSynchMeasurementsNG, {color: 'gold', dashArray: '6', className: 'line-transition'}).bindPopup("Measurements in the north, middle, and south of Sweden. Locations are indicative, due to data protection."))
+
 
 // Layers and layer control
 // var LayerOfMap = { "<span style='color: black'><b>OpenStreetMap</b></span>": basemap};
@@ -192,10 +202,7 @@ legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 10, 20, 50, 100, 200, 500, 1000],
         labels = [];
-    div.innerHTML = '<img id="x" src="assets/js/images/marker-icon-purple.png" width="20" height="20"/>' + '<h9>  Synchronous Measurements</h9></br>' +
-		'<img id="x" src="assets/js/images/marker-icon-green.png" width="20" height="20"/>' + '<h9>  Standalone Measurements</h9></br>' +
-		'<img id="x" src="assets/js/images/marker-icon.png" width="20" height="20"/>' + '<h9>  TSO Open Data Measurements</h9></br>'+
-		'<img id="x" src="assets/js/images/marker-icon-yellow.png" width="20" height="20"/>' + '/' + '<img id="x" src="assets/js/images/marker-target-yellow.png" width="30" height="30"/>' + '<h9>  Independent Measurements</h9>';
+    div.innerHTML = '<img id="x" src="assets/js/images/marker-icon-green.png" width="30" height="30"/>' + '<h9>  Standalone Measurements</h9>';
     return div;
 };
 
@@ -205,13 +212,13 @@ info.addTo(map);
 // Slider
 var slider = document.getElementById('slider');
 noUiSlider.create(slider, {
-    start: [2011, 2021], // Handle start position
+    start: [2017, 2026], // Handle start position
     connect: true, // Display a colored bar between the handles
     step: 1, // Steps shown, i.e., year by year
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
     range: { // Slider can select '0' to '100'
-        'min': 2011,
-        'max': 2021
+        'min': 2017,
+        'max': 2026
     },
     pips: { // Show a scale with the slider
         mode: 'steps',
