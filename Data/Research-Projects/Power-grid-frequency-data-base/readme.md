@@ -209,9 +209,12 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       btn.textContent = 'Loading...';
 
       const base = (typeof BASE_URL !== 'undefined') ? BASE_URL : '';
+      
+      let autocorr_data;
+      let histogram_data;
       if (loc == 'iceland') {
-        const autocorr_data = './../assets/files/IS01_autocorr.csv';
-        const histogram_data = './../assets/files/IS01_histogram.csv';
+        autocorr_data = './../assets/files/IS01_autocorr.csv';
+        histogram_data = './../assets/files/IS01_histogram.csv';
       } else {
         const autocorr_data = 1;
         const histogram_data = 5;
