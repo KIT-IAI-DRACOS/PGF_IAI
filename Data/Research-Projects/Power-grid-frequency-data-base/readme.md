@@ -210,11 +210,11 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
       const base = (typeof BASE_URL !== 'undefined') ? BASE_URL : '';
       if (loc == 'iceland') {
-        const autocorr = './../assets/files/IS01_autocorr.csv';
-        const histogram = './../assets/files/IS01_histogram.csv';
+        const autocorr_data = './../assets/files/IS01_autocorr.csv';
+        const histogram_data = './../assets/files/IS01_histogram.csv';
       } else {
-        const autocorr = 1;
-        const histogram = 5;
+        const autocorr_data = 1;
+        const histogram_data = 5;
       } 
       const [autocorr, histogram] = await Promise.all([
         parseCSV(autocorr),
