@@ -6,7 +6,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
 | Location | Country | Synchronous Area | resolution |  date range | number of days | 
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Karlsruhe | Germany | Continental Europe | 1 sec | 2019-07-09 - 2019-08-18 | 41.0 | 
+| Karlsruhe | Germany | Continental Europe | 1 sec | 2019-07-09 - 2019-08-18 | 42.0 | 
 | Oldenburg | Germany | Continental Europe | 1 sec | 2019-07-10 - 2019-08-07 | 41.0 |
 | Istanbul | Turkey |  Continental Europe  | 1 sec | 2019-07-09 - 2019-08-18 | 41.0 |
 | Lisbon | Portugal |  Continental Europe  | 1 sec | 2019-07-09 - 2019-08-16 | 41.0 |
