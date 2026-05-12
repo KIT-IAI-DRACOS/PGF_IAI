@@ -201,7 +201,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       
       let autocorr_data;
       let histogram_data;
-      if (loc === 'iceland') {
+      if (loc === 'Iceland') {
         autocorr_data = './../assets/files/IS01_autocorr.csv';
         histogram_data = './../assets/files/IS01_histogram.csv';
       } else {
