@@ -63,7 +63,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
   <script>
 
     function createMetadataRow(item, index) {
-      const ts = item.temporal.timeseries[0];
+      const ts = item.temporal[0];
       const row = document.createElement("tr");
 
       const cells = [
