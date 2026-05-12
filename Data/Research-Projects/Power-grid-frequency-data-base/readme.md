@@ -72,7 +72,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         `<label>${ts.resolution}</label>`,
         `<label>${ts.start}<br/>${ts.end}</label>`,
         `<a href="${item.path}" target="_blank">OSF Link</a>`,
-        `<button id="btnAnalysis-${index}" class="btnAnalysis" title="Analysis from ${ts.start} to ${ts.end}" onclick="runAnalysis(${item.spatial.extent.name})">Analysis</button>`
+        `<button id="btnAnalysis-${index}" class="btnAnalysis" title="Analysis from ${ts.start} to ${ts.end}" onclick="runAnalysis('${item.spatial.extent.name}')">Analysis</button>`
       ];
 
       cells.forEach(html => {
