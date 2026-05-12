@@ -69,10 +69,10 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       const cells = [
         `<label>${item.spatial.location.address}</label>`,
         `<label>${item.spatial.extent.name}</label>`,
-        `<label>${ts.resolutionValue}</label>`,
+        `<label>${ts.resolution}</label>`,
         `<label>${ts.start}<br/>${ts.end}</label>`,
         `<a href="${item.path}" target="_blank">OSF Link</a>`,
-        `<button id="btnAnalysis-${index}" class="btnAnalysis" title="Analysis from ${ts.start} to ${ts.end}" onclick="runAnalysis(${index})">Analysis</button>`
+        `<button id="btnAnalysis-${index}" class="btnAnalysis" title="Analysis from ${ts.start} to ${ts.end}" onclick="runAnalysis(${item.spatial.location.address})">Analysis</button>`
       ];
 
       cells.forEach(html => {
@@ -87,7 +87,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     async function loadMetadata() {
       const response = await fetch("./../assets/files/example_metadata_various_campaigns_python.json");
       const data = await response.json();
-      const items = Array.isArray(data) ? data : [data];
+      const items = Array.isArray(data.resources) ? data.resources : [data.resources];
 
       const tbody = document.querySelector("#metadataStandalone tbody");
       tbody.innerHTML = "";
