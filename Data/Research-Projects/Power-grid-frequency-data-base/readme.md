@@ -44,7 +44,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
 <label for="txtSearchStandaloneMetadata">Enter text to search the table</label>
 <input type="input" id="txtSearchStandaloneMetadata" name="txtSearchStandaloneMetadata"/>
-  <table id="metadataStandalone" style="width: 980px">
+  <table id="metadataStandalone" class="newTbl" style="width: 980px">
    <thead>
       <tr>
         <th>Location</th>
@@ -62,50 +62,39 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
   <script>
 
+    function createMetadataRow(item, index) {
+      const ts = item.temporal.timeseries[0];
+      const row = document.createElement("tr");
+
+      const cells = [
+        `<label>${item.spatial.location.address}</label>`,
+        `<label>${item.spatial.extent.name}</label>`,
+        `<label>${ts.resolutionValue}</label>`,
+        `<label>${ts.start}<br/>${ts.end}</label>`,
+        `<a href="${item.path}" target="_blank">OSF Link</a>`,
+        `<button id="btnAnalysis-${index}" class="btnAnalysis" title="Analysis from ${ts.start} to ${ts.end}" onclick="runAnalysis(${index})">Analysis</button>`
+      ];
+
+      cells.forEach(html => {
+        const td = document.createElement("td");
+        td.innerHTML = html;
+        row.appendChild(td);
+      });
+
+      return row;
+    }
+
     async function loadMetadata() {
-      const response = await fetch("./../assets/files/iceland.json");
+      const response = await fetch("./../assets/files/example_metadata_various_campaigns_python.json");
       const data = await response.json();
+      const items = Array.isArray(data) ? data : [data];
 
       const tbody = document.querySelector("#metadataStandalone tbody");
       tbody.innerHTML = "";
 
-      locationValue=`<label>${data.spatial.location.address}</label>`;
-      country=`<label>${data.spatial.extent.name}</label>`;
-      temporal=`<label>${data.temporal.timeseries[0].resolutionValue}</label>`;
-      dateRange=`<label>${data.temporal.timeseries[0].start}<br/>${data.temporal.timeseries[0].end}</label>`; 
-      path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
-      analysis=`<button id="btnAnalysis" title="Analysis plot is from ${data.temporal.timeseries[0].start} to ${data.temporal.timeseries[0].end}" class="btnAnalysis" onclick="runAnalysis('iceland')">Analysis</button>`;
-
-      row = document.createElement("tr"); 
-
-      [row, locationValue, country, temporal, path];
-
-      locationCell = document.createElement("td");
-      locationCell.innerHTML = locationValue;
-
-      countryCell = document.createElement("td");
-      countryCell.innerHTML = country;
-
-      temporalCell = document.createElement("td");
-      temporalCell.innerHTML = temporal;
-
-      dateRangeCell = document.createElement("td");
-      dateRangeCell.innerHTML = dateRange;
-
-      pathCell = document.createElement("td");
-      pathCell.innerHTML = path;
-
-      analysisCell = document.createElement("td");
-      analysisCell.innerHTML = analysis;
-
-      row.appendChild(locationCell);
-      row.appendChild(countryCell);
-      row.appendChild(temporalCell);
-      row.appendChild(dateRangeCell);
-      row.appendChild(pathCell);
-      row.appendChild(analysisCell);
-
-      tbody.appendChild(row);
+      items.forEach((item, index) => {
+        tbody.appendChild(createMetadataRow(item, index));
+      });
     }
 
     loadMetadata();

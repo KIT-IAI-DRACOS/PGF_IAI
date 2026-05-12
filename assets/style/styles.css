@@ -1,4 +1,4 @@
-#metadataStandalone {
+.newTbl {
   width: 100%;
   border-collapse: collapse;
   font-family: "Segoe UI", Roboto, sans-serif;
@@ -8,12 +8,12 @@
   display: table;
 }
 
-#metadataStandalone thead {
+.newTbl thead {
   background: #e1d46e;
   color: #2b2b2b;
 }
 
-#metadataStandalone th {
+.newTbl th {
   text-align: left;
   padding: 14px 16px;
   font-size: 18px;
@@ -21,24 +21,24 @@
   border-bottom: 2px solid #b9b873;;
 }
 
-#metadataStandalone td {
+.newTbl td {
   padding: 14px 16px;
   font-size: 17px;
   color: #333;
   border-bottom: 1px solid #e5e5e5;
 }
 
-#metadataStandalone tbody tr:hover {
+.newTbl tbody tr:hover {
   background-color: #f7f5ef;
   transition: background 0.2s ease;
 }
 
-#metadataStandalone a {
+.newTbl a {
   color: #2a6f97;
   text-decoration: none;
   font-weight: 500;
 }
 
-#metadataStandalone a:hover {
+.newTbl a:hover {
   text-decoration: underline;
 }
