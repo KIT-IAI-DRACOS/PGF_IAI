@@ -44,7 +44,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Tallinn, Estonia - EE01",
+      "@id": "EE01",
+      "name": "EE01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -102,7 +103,7 @@
           "address": "Tallinn"
         },
         "extent": {
-          "name": "Estonia"
+          "name": "['Estonia', 'Baltic grid']"
         }
       }
     },
@@ -133,7 +134,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Las Palmas de Gran Canaria, Canary Islands, Spain - ES_GC01",
+      "@id": "ES_GC01",
+      "name": "ES_GC01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -179,7 +181,7 @@
           "address": "Las Palmas de Gran Canaria, Canary Islands"
         },
         "extent": {
-          "name": "Spain"
+          "name": "['Spain', 'Gran Canarian Grid \\t']"
         }
       }
     },
@@ -210,7 +212,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Las Palmas de Gran Canaria, Canary Islands, Spain - ES_GC02",
+      "@id": "ES_GC02",
+      "name": "ES_GC02",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -256,7 +259,7 @@
           "address": "Las Palmas de Gran Canaria, Canary Islands"
         },
         "extent": {
-          "name": "Spain"
+          "name": "['Spain', 'Gran Canarian Grid \\t']"
         }
       }
     },
@@ -287,7 +290,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Palma de Mallorca, Spain - ES_PM01",
+      "@id": "ES_PM01",
+      "name": "ES_PM01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -345,7 +349,7 @@
           "address": "Palma de Mallorca"
         },
         "extent": {
-          "name": "Spain"
+          "name": "['Spain', 'Mallorcan Grid']"
         }
       }
     },
@@ -376,7 +380,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Palma de Mallorca, Spain - ES_PM02",
+      "@id": "ES_PM02",
+      "name": "ES_PM02",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -434,7 +439,7 @@
           "address": "Palma de Mallorca"
         },
         "extent": {
-          "name": "Spain"
+          "name": "['Spain', 'Mallorcan Grid']"
         }
       }
     },
@@ -465,7 +470,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Palma de Mallorca, Spain - ES_PM03",
+      "@id": "ES_PM03",
+      "name": "ES_PM03",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -523,7 +529,7 @@
           "address": "Palma de Mallorca"
         },
         "extent": {
-          "name": "Spain"
+          "name": "['Spain', 'Mallorcan Grid']"
         }
       }
     },
@@ -554,7 +560,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Vestmanna, Faroe Islands - FO01",
+      "@id": "FO01",
+      "name": "FO01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -612,7 +619,7 @@
           "address": "Vestmanna"
         },
         "extent": {
-          "name": "Faroe Islands"
+          "name": "['Faroe Islands', 'Faroe Grid']"
         }
       }
     },
@@ -643,7 +650,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Lauris, France - FR01",
+      "@id": "FR01",
+      "name": "FR01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -701,7 +709,7 @@
           "address": "Lauris"
         },
         "extent": {
-          "name": "France"
+          "name": "['France', 'Continental Europe']"
         }
       }
     },
@@ -732,7 +740,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - London, United Kingdom - GB01",
+      "@id": "GB01",
+      "name": "GB01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -778,7 +787,7 @@
           "address": "London"
         },
         "extent": {
-          "name": "United Kingdom"
+          "name": "['United Kingdom', 'National Grid']"
         }
       }
     },
@@ -809,7 +818,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - London, United Kingdom - GB02",
+      "@id": "GB02",
+      "name": "GB02",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -855,7 +865,7 @@
           "address": "London"
         },
         "extent": {
-          "name": "United Kingdom"
+          "name": "['United Kingdom', 'National Grid']"
         }
       }
     },
@@ -886,7 +896,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Split, Croatia - HR01",
+      "@id": "HR01",
+      "name": "HR01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -944,7 +955,7 @@
           "address": "Split"
         },
         "extent": {
-          "name": "Croatia"
+          "name": "['Croatia', 'Croatian Grid']"
         }
       }
     },
@@ -975,7 +986,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Reykjavik, Iceland - IS01",
+      "@id": "IS01",
+      "name": "IS01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1021,7 +1033,7 @@
           "address": "Reykjavik"
         },
         "extent": {
-          "name": "Iceland"
+          "name": "['Iceland', 'Icelandic Grid']"
         }
       }
     },
@@ -1052,7 +1064,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Erice, Sicily, Italy - IT01",
+      "@id": "IT01",
+      "name": "IT01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1110,7 +1123,7 @@
           "address": "Erice, Sicily"
         },
         "extent": {
-          "name": "Italy"
+          "name": "['Italy', 'Continental Europe']"
         }
       }
     },
@@ -1141,7 +1154,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Naju, South Korea - KR01",
+      "@id": "KR01",
+      "name": "KR01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1187,7 +1201,7 @@
           "address": "Naju"
         },
         "extent": {
-          "name": "South Korea"
+          "name": "['South Korea', 'South Korean Grid']"
         }
       }
     },
@@ -1218,7 +1232,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Kuala Lumpur, Malaysia - MY01",
+      "@id": "MY01",
+      "name": "MY01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1264,7 +1279,7 @@
           "address": "Kuala Lumpur"
         },
         "extent": {
-          "name": "Malaysia"
+          "name": "['Malaysia', 'National Grid, Malaysia']"
         }
       }
     },
@@ -1295,12 +1310,13 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Lisbon, Portugal - PT01",
+      "@id": "PL01",
+      "name": "PL01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
-          "start": "2018-02-14T14:33:09+0000",
-          "end": "2018-02-21T09:10:00+0000",
+          "start": "2019-04-04T00:00:00+0000",
+          "end": "2019-04-07T23:59:59+0000",
           "resolution": "1.0 S",
           "alignment": "left",
           "aggregationType": "avg"
@@ -1315,13 +1331,25 @@
             "description": "Time stamp of measurement"
           },
           {
-            "name": "f50_PT",
+            "name": "f50_PL",
             "type": "Float64",
             "nullable": false,
             "description": "Frequency derivative in mHz"
           },
           {
-            "name": "QI_PT",
+            "name": "QI_PL",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
             "type": "Int64",
             "nullable": false,
             "description": "Quality index, 0 for good data, 1 and 2 for bad data"
@@ -1338,10 +1366,10 @@
       "publicationDate": "2026-05-12",
       "spatial": {
         "location": {
-          "address": "Lisbon"
+          "address": "Krakow"
         },
         "extent": {
-          "name": "Portugal"
+          "name": "['Poland', 'Continental Europe']"
         }
       }
     },
@@ -1372,7 +1400,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - St. Petersburg, Russia - RU01",
+      "@id": "RU01",
+      "name": "RU01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1430,7 +1459,7 @@
           "address": "St. Petersburg"
         },
         "extent": {
-          "name": "Russia"
+          "name": "['Russia', 'Russian Grid']"
         }
       }
     },
@@ -1461,7 +1490,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Stockholm, Sweden - SE01",
+      "@id": "SE01",
+      "name": "SE01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1519,7 +1549,7 @@
           "address": "Stockholm"
         },
         "extent": {
-          "name": "Sweden"
+          "name": "['Sweden', 'Nordic Grid']"
         }
       }
     },
@@ -1550,7 +1580,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Boulder, Colorado, United States - US_CO01",
+      "@id": "US_CO01",
+      "name": "US_CO01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1596,7 +1627,7 @@
           "address": "Boulder, Colorado"
         },
         "extent": {
-          "name": "United States"
+          "name": "['United States', 'Western Interconnection']"
         }
       }
     },
@@ -1627,7 +1658,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Florida, United States - US_FL01",
+      "@id": "US_FL01",
+      "name": "US_FL01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1673,7 +1705,7 @@
           "address": "Florida"
         },
         "extent": {
-          "name": "United States"
+          "name": "['United States', 'Eastern Interconnection']"
         }
       }
     },
@@ -1704,7 +1736,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - College Station, Texas, United States - US_TX01",
+      "@id": "US_TX01",
+      "name": "US_TX01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1750,7 +1783,7 @@
           "address": "College Station, Texas"
         },
         "extent": {
-          "name": "United States"
+          "name": "['United States', 'Texas Interconnection']"
         }
       }
     },
@@ -1781,7 +1814,8 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - College Station, Texas, United States - US_TX02",
+      "@id": "US_TX02",
+      "name": "US_TX02",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1827,7 +1861,7 @@
           "address": "College Station, Texas"
         },
         "extent": {
-          "name": "United States"
+          "name": "['United States', 'Texas Interconnection']"
         }
       }
     },
@@ -1858,7 +1892,86 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
-      "name": "Frequency measurements in distribution grids - Cape Town, South Africa - ZA01",
+      "@id": "US_UT01",
+      "name": "US_UT01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-05-19T02:54:06+0000",
+          "end": "2019-05-25T11:58:16+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f60_US_UT01",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_US_UT01",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Salt Lake City, Utah"
+        },
+        "extent": {
+          "name": "['United States', 'Western Interconnection']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "ZA01",
+      "name": "ZA01",
       "path": "https://osf.io/by5hu/files/osfstorage",
       "temporal": [
         {
@@ -1904,7 +2017,7 @@
           "address": "Cape Town"
         },
         "extent": {
-          "name": "South Africa"
+          "name": "['South Africa', 'South African Grid']"
         }
       }
     }
