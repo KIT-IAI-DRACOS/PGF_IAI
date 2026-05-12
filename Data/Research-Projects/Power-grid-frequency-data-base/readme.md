@@ -194,8 +194,6 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
     async function runAnalysis(loc) {
       const btn = document.getElementById('btnAnalysis');
-      btn.disabled = true;
-      btn.textContent = 'Loading...';
 
       const base = (typeof BASE_URL !== 'undefined') ? BASE_URL : '';
       
