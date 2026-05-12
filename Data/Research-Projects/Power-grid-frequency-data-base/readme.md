@@ -23,7 +23,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 ### Standalone measurements
 
 
-<label for="txtSearchStandalone">Enter text to search the table</label>
+<!-- <label for="txtSearchStandalone">Enter text to search the table</label>
 <input type="input" id="txtSearchStandalone" name="txtSearchStandalone"/>
   <table id="dynamicStandalone" style="width: 980px">
     <thead>
@@ -40,7 +40,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     </thead>
     <tbody>
     </tbody>
-  </table>
+  </table> -->
 
 <label for="txtSearchStandaloneMetadata">Enter text to search the table</label>
 <input type="input" id="txtSearchStandaloneMetadata" name="txtSearchStandaloneMetadata"/>
@@ -99,11 +99,11 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
     loadMetadata();
     
-    document.getElementById("txtSearchStandalone").onkeyup = e => {
-        const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
-        for (const tr of rows)
-            tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
-    };
+    // document.getElementById("txtSearchStandalone").onkeyup = e => {
+    //     const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
+    //     for (const tr of rows)
+    //         tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
+    // };
 
     document.getElementById("txtSearchStandaloneMetadata").onkeyup = e => {
         const rows = document.querySelectorAll("#metadataStandalone tbody tr");
@@ -135,19 +135,19 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     { "location": "St. Petersburg", "country": "Russia", "synchronousArea": "Russian Grid", "Resolution":"1 sec", "dateRange":"   2019-04-30 - 2019-05-12 ", "noOfDays":" 13.0 ","link":'<a href="https://osf.io/tvsyc/download">OSF link</a>', "size":"44.5"}
     ];
 
-    const tableBody = document.getElementById('dynamicStandalone').getElementsByTagName('tbody')[0];
+    // const tableBody = document.getElementById('dynamicStandalone').getElementsByTagName('tbody')[0];
 
-    jsonData.forEach(item => {
-      let row = tableBody.insertRow();
-      Object.values(item).forEach(text => {
-        let cell = row.insertCell();
-        if (text.includes("<a ")) {
-            cell.innerHTML = text;
-            } else {
-            cell.textContent = text;
-        }
-      });
-    });
+    // jsonData.forEach(item => {
+    //   let row = tableBody.insertRow();
+    //   Object.values(item).forEach(text => {
+    //     let cell = row.insertCell();
+    //     if (text.includes("<a ")) {
+    //         cell.innerHTML = text;
+    //         } else {
+    //         cell.textContent = text;
+    //     }
+    //   });
+    // });
   </script>
 
   <style>
