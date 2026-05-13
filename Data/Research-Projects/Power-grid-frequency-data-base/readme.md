@@ -139,6 +139,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       <tr>
         <th>Location</th>
         <th>Country</th>
+        <th>Synchronous Area</th>
         <th>Resolution</th>
         <th>Date Range</th>
         <th>Path</th>
@@ -176,6 +177,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
       const cells = [
         `<label>${item.spatial.location.address}</label>`,
+        `<label>${item.spatial.extent.name}</label>`,
         `<label>${item.spatial.extent.name}</label>`,
         `<label>${ts.resolution}</label>`,
         `<label>${ts.start}<br/>${ts.end}</label>`,
@@ -333,31 +335,36 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       return { headers, cols };
     }
 
+    async function fetchAnalysis(loc){
+      const response = await fetch("./../assets/files/frequency_measurements_statistics.json");
+      const data = await response.json();
+
+      const analysis = data[loc];
+
+      return analysis;
+    }
+
     async function runAnalysis(loc) {
+      document.getElementById('divAnalysis').style.display = 'none';
+
       const btn = document.getElementById('btnAnalysis');
 
       const base = (typeof BASE_URL !== 'undefined') ? BASE_URL : '';
       
       let autocorr_data;
       let histogram_data;
-      if (loc === 'IS01') {
-        autocorr_data = './../assets/files/IS01_autocorr.csv';
-        histogram_data = './../assets/files/IS01_histogram.csv';
-      } else {
-        autocorr_data = 1;
-        histogram_data = 5;
-      } 
-      const [histogram, autocorr] = await Promise.all([
-        parseCSV(histogram_data),
-        parseCSV(autocorr_data)
-      ]);
 
+      const analysis = await fetchAnalysis(loc);
+    
+      autocorr_data = analysis.autocorrelation;
+      histogram_data = analysis.histogram_values;
+     
       document.getElementById('divAnalysis').style.display = 'block';
 
-      const hH = histogram.headers;
+      const hH = "Histograms";
       Plotly.newPlot('plotHistogram', [{
-        x: histogram.cols[hH[0]],
-        y: histogram.cols[hH[1]],
+        x: analysis.bin_centers,
+        y: histogram_data,
         type: 'bar',
         marker: { color: '#f63bb5' },
         name: hH[1]
@@ -368,10 +375,10 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         margin: { t: 50, r: 20, b: 50, l: 60 }
       }, { responsive: true });
 
-      const acH = autocorr.headers;
+      const acH = 'Autocorrelation';
       Plotly.newPlot('plotAutocorr', [{
-        x: autocorr.cols[acH[0]],
-        y: autocorr.cols[acH[1]],
+        x: analysis.lags,
+        y: autocorr_data,
         type: 'scatter',
         mode: 'lines',
         line: { color: '#f19e63', width: 2 },
@@ -379,7 +386,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       }], {
         title: { text: 'Autocorrelation', font: { size: 16 } },
         xaxis: { title: 'lag (s)', dtick: 300 },
-        yaxis: { title: acH[1] },
+        yaxis: { title: 'Autocorrelation' },
         margin: { t: 50, r: 20, b: 50, l: 60 }
       }, { responsive: true });
       
