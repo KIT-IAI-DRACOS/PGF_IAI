@@ -154,8 +154,8 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       padding: 4px 14px;
       border: none;
       border-radius: 5px;
-      background: linear-gradient(135deg, #6366f1, #3b82f6);
-      color: #fff;
+      background: linear-gradient(135deg, #f1c866, #f6c982);
+      color: #000000;
       font-weight: 600;
       cursor: pointer;
       transition: opacity 0.2s;
@@ -192,7 +192,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       return row;
     }
 
-    const PAGE_SIZE = 5;
+    const PAGE_SIZE = 10;
     let allMetadataItems = [];
     let filteredMetadataItems = [];
     let currentMetadataPage = 1;
