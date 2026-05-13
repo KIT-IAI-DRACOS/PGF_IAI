@@ -163,6 +163,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     function createMetadataRow(item, index) {
       const ts = item.temporal[0];
       const row = document.createElement("tr");
+      const itemname = item.name
 
       const cells = [
         `<label>${item.spatial.location.address}</label>`,
@@ -170,7 +171,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         `<label>${ts.resolution}</label>`,
         `<label>${ts.start}<br/>${ts.end}</label>`,
         `<a href="${item.path}" target="_blank">OSF Link</a>`,
-        `<button id="btnAnalysis-${index}" class="btnAnalysis" title="Analysis from ${ts.start} to ${ts.end}" onclick="runAnalysis('${item.spatial.extent.name}')">Analysis</button>`
+        `<button id="btnAnalysis-${index}" class="btnAnalysis" title="Analysis from ${ts.start} to ${ts.end}" onclick="runAnalysis('${item.name}')">Analysis</button>` 
       ];
 
       cells.forEach(html => {
@@ -297,7 +298,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       
       let autocorr_data;
       let histogram_data;
-      if (loc === 'Iceland') {
+      if (loc === 'IS01') {
         autocorr_data = './../assets/files/IS01_autocorr.csv';
         histogram_data = './../assets/files/IS01_histogram.csv';
       } else {
