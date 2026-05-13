@@ -147,6 +147,23 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     </thead>
     <tbody></tbody>
   </table>
+  <div id="metadataPagination" style="margin-top:10px; display:flex; align-items:center; gap:10px; font-size:13px;"></div>
+
+  <style>
+    #metadataPagination button {
+      padding: 4px 14px;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    #metadataPagination button:disabled { opacity: 0.35; cursor: not-allowed; }
+    #metadataPagination button:not(:disabled):hover { opacity: 0.85; }
+    #metadataPagination .page-info { color: #444; }
+  </style>
 
 
 
@@ -175,31 +192,64 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       return row;
     }
 
+    const PAGE_SIZE = 5;
+    let allMetadataItems = [];
+    let filteredMetadataItems = [];
+    let currentMetadataPage = 1;
+
+    function renderMetadataPage(items, page) {
+      const tbody = document.querySelector("#metadataStandalone tbody");
+      tbody.innerHTML = "";
+      const start = (page - 1) * PAGE_SIZE;
+      items.slice(start, start + PAGE_SIZE).forEach((item, i) => {
+        tbody.appendChild(createMetadataRow(item, start + i));
+      });
+      renderMetadataPagination(items, page);
+    }
+
+    function renderMetadataPagination(items, page) {
+      const total = Math.ceil(items.length / PAGE_SIZE);
+      const container = document.getElementById("metadataPagination");
+      container.innerHTML = "";
+      if (total <= 1) return;
+
+      const prev = document.createElement("button");
+      prev.textContent = "←";
+      prev.disabled = page === 1;
+      prev.onclick = () => renderMetadataPage(filteredMetadataItems, --currentMetadataPage);
+
+      const info = document.createElement("span");
+      info.className = "page-info";
+      info.textContent = `Page ${page} of ${total} (${items.length} items)`;
+
+      const next = document.createElement("button");
+      next.textContent = "→";
+      next.disabled = page === total;
+      next.onclick = () => renderMetadataPage(filteredMetadataItems, ++currentMetadataPage);
+
+      container.append(prev, info, next);
+    }
+
     async function loadMetadata() {
       const response = await fetch("./../assets/files/example_metadata_various_campaigns_python.json");
       const data = await response.json();
-      const items = Array.isArray(data.resources) ? data.resources : [data.resources];
-
-      const tbody = document.querySelector("#metadataStandalone tbody");
-      tbody.innerHTML = "";
-
-      items.forEach((item, index) => {
-        tbody.appendChild(createMetadataRow(item, index));
-      });
+      allMetadataItems = Array.isArray(data.resources) ? data.resources : [data.resources];
+      filteredMetadataItems = allMetadataItems;
+      currentMetadataPage = 1;
+      renderMetadataPage(filteredMetadataItems, currentMetadataPage);
     }
 
     loadMetadata();
-    
-    // document.getElementById("txtSearchStandalone").onkeyup = e => {
-    //     const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
-    //     for (const tr of rows)
-    //         tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
-    // };
 
     document.getElementById("txtSearchStandaloneMetadata").onkeyup = e => {
-        const rows = document.querySelectorAll("#metadataStandalone tbody tr");
-        for (const tr of rows)
-            tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
+      const q = e.target.value.toLowerCase();
+      filteredMetadataItems = allMetadataItems.filter(item => {
+        const ts = item.temporal[0];
+        return [item.spatial.location.address, item.spatial.extent.name, ts.resolution, ts.start, ts.end]
+          .join(' ').toLowerCase().includes(q);
+      });
+      currentMetadataPage = 1;
+      renderMetadataPage(filteredMetadataItems, currentMetadataPage);
     };
 
 
