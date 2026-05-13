@@ -4,21 +4,119 @@ This is a set of 19 recordings in 12 synchronous regions, spanning from 1 day to
 
 Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) - 218 mb.
 
-| Location | Country | Synchronous Area | resolution |  date range | number of days | 
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Karlsruhe | Germany | Continental Europe | 1 sec | 2019-07-09 - 2019-08-18 | 41.0 | 
-| Oldenburg | Germany | Continental Europe | 1 sec | 2019-07-10 - 2019-08-07 | 41.0 |
-| Istanbul | Turkey |  Continental Europe  | 1 sec | 2019-07-09 - 2019-08-18 | 41.0 |
-| Lisbon | Portugal |  Continental Europe  | 1 sec | 2019-07-09 - 2019-08-16 | 41.0 |
+<table class="newTbl" style="width: 980px">
+   <thead>
+      <tr>
+        <th>Location</th>
+        <th>Country</th>
+        <th>Synchronous Area</th>
+        <th>Resolution</th>
+        <th>Date Range</th>
+        <th>Number of days</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>Karlsruhe</td>
+          <td>Germany</td>
+          <td>Continental Europe</td>
+          <td>1 sec</td>
+          <td>2019-07-09 - 2019-08-18</td>
+          <td>41.0</td>
+      </tr>
+      <tr>
+          <td>Oldenburg</td>
+          <td>Germany</td>
+          <td>Continental Europe</td>
+          <td>1 sec</td>
+          <td>2019-07-10 - 2019-08-07</td>
+          <td>41.0</td>
+      </tr>
+      <tr>
+          <td>Istanbul</td>
+          <td>Turkey</td>
+          <td>Continental Europe</td>
+          <td>1 sec</td>
+          <td>2019-07-09 - 2019-08-18</td>
+          <td>41.0</td>
+      </tr>
+      <tr>
+          <td>Lisbon</td>
+          <td>Portugal</td>
+          <td>Continental Europe</td>
+          <td>1 sec</td>
+          <td>2019-07-09 - 2019-08-16</td>
+          <td>41.0</td>
+      </tr>
+    </tbody>
+  </table>
 
 ### GPS-Synchronised measurements of the synchronization of the Baltic grid and the CE synchronous area
 
+
 | Location | Country | Synchronous Area | resolution |  date range | number of days | Link | size (gb)
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Berlin | Germany | Continental Europe | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/tcx6g/download) | 1.3
-| Elk | Poland | Continental Europe | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/28qre/download) | 1.3
+|  | Germany | Continental Europe |  | | 34.0 | | 1.3
+|  |  | Continental Europe | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/28qre/download) | 1.3
 | Kaunas | Lithuania |  Baltic Grid/Continental Europe  | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/py9xg/download) | 1.3
 | Tallinn | Estonia |  Baltic GridContinental Europe  | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/n6pc8/download) | 1.3
+
+<table class="newTbl" style="width: 980px">
+   <thead>
+      <tr>
+        <th>Location</th>
+        <th>Country</th>
+        <th>Synchronous Area</th>
+        <th>Resolution</th>
+        <th>Date Range</th>
+        <th>Number of days</th>
+        <th>Link</th>
+        <th>Size (GB)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>Berlin</td>
+          <td>Germany</td>
+          <td>Continental Europe</td>
+          <td>0.1 sec</td>
+          <td>2025-01-23 - 2025-01-23 </td>
+          <td>34.0</td>
+          <td>[OSF link](https://osf.io/tcx6g/download) </td>
+          <td>1.3</td>
+      </tr>
+      <tr>
+          <td>Elk</td>
+          <td>Poland</td>
+          <td>Continental Europe</td>
+          <td>0.1 sec</td>
+          <td>2025-01-23 - 2025-01-23</td>
+          <td>34.0</td>
+          <td>[OSF link](https://osf.io/28qre/download)</td>
+          <td>1.3</td>
+      </tr>
+      <tr>
+          <td>Kaunas</td>
+          <td>Lithuania</td>
+          <td>Baltic Grid/Continental Europe</td>
+          <td>0.1 sec</td>
+          <td>2025-01-23 - 2025-01-23</td>
+          <td>34.0</td>
+          <td>[OSF link](https://osf.io/py9xg/download)</td>
+          <td>1.3</td>
+      </tr>
+      <tr>
+          <td>Tallinn</td>
+          <td>Estonia</td>
+          <td>Baltic Grid/Continental Europe</td>
+          <td>0.1 sec</td>
+          <td>2025-01-23 - 2025-01-23</td>
+          <td>34.0</td>
+          <td>[OSF link](https://osf.io/n6pc8/download)</td>
+          <td>1.3</td>
+      </tr>
+    </tbody>
+  </table>
 
 ### Standalone measurements
 
