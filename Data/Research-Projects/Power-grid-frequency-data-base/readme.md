@@ -53,14 +53,6 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
 ### GPS-Synchronised measurements of the synchronization of the Baltic grid and the CE synchronous area
 
-
-| Location | Country | Synchronous Area | resolution |  date range | number of days | Link | size (gb)
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|  | Germany | Continental Europe |  | | 34.0 | | 1.3
-|  |  | Continental Europe | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/28qre/download) | 1.3
-| Kaunas | Lithuania |  Baltic Grid/Continental Europe  | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/py9xg/download) | 1.3
-| Tallinn | Estonia |  Baltic GridContinental Europe  | 0.1 sec | 2025-01-23 - 2025-01-23 | 34.0 | [OSF link](https://osf.io/n6pc8/download) | 1.3
-
 <table class="newTbl" style="width: 980px">
    <thead>
       <tr>
@@ -82,7 +74,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
           <td>0.1 sec</td>
           <td>2025-01-23 - 2025-01-23 </td>
           <td>34.0</td>
-          <td>[OSF link](https://osf.io/tcx6g/download) </td>
+          <td><a href="https://osf.io/tcx6g/download">OSF link</a> </td>
           <td>1.3</td>
       </tr>
       <tr>
@@ -92,7 +84,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
           <td>0.1 sec</td>
           <td>2025-01-23 - 2025-01-23</td>
           <td>34.0</td>
-          <td>[OSF link](https://osf.io/28qre/download)</td>
+          <td><a href="https://osf.io/28qre/download">OSF link</a> </td>
           <td>1.3</td>
       </tr>
       <tr>
@@ -102,7 +94,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
           <td>0.1 sec</td>
           <td>2025-01-23 - 2025-01-23</td>
           <td>34.0</td>
-          <td>[OSF link](https://osf.io/py9xg/download)</td>
+          <td><a href="https://osf.io/py9xg/download">OSF link</a> </td>
           <td>1.3</td>
       </tr>
       <tr>
@@ -112,7 +104,7 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
           <td>0.1 sec</td>
           <td>2025-01-23 - 2025-01-23</td>
           <td>34.0</td>
-          <td>[OSF link](https://osf.io/n6pc8/download)</td>
+          <td><a href="https://osf.io/n6pc8/download">OSF link</a> </td>
           <td>1.3</td>
       </tr>
     </tbody>
