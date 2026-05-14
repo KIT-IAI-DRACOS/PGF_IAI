@@ -11,7 +11,9 @@ toc_label: "Database"
 toc_icon: "cog"
 ---
 
-The target is to collect, process, and document all available power-grid frequency data publicly available and make it research ready.
+We wish to make power-grid frequency data publicly available. Here, we mostly focus on self-recorded data. Please get in touch if you want to host a device or have suggestions for new measurement campaigns.
+The data is grouped into synchronized measurement campaigns within one synchronous area and standalone measurements.
+See also the [Archive](https://power-grid-frequency.org/archive-database/) for TSO and other measurements. 
 
 # Research projects open data
 
