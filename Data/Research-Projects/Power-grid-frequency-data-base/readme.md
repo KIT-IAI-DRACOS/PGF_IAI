@@ -1,5 +1,3 @@
-This is a set of 19 recordings in 12 synchronous regions, spanning from 1 day to ~1 month in length, over 2017 to 2019, stored in the Open Science Framework [Power grid frequency data base](https://osf.io/by5hu/) since 2020.
-
 ### GPS-Synchronised measurements
 
 Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) - 218 mb.
@@ -246,5 +244,5 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
 The links are direct links to the `.csv` files from the Open Science Framework repository [Power grid frequency data base](https://osf.io/by5hu/).
 
-**Licensing**: The authors request the associated [<a href="https://arxiv.org/abs/2006.01771" class="Blau">preprint</a>] be cited:
+**Licensing**: The authors request the associated publication(s) to be cited, see also [Publications](https://power-grid-frequency.org/publications/)
 >*Power grid frequency data base*, R. Jumar, H. Maaß, B. Schäfer, L. Rydin Gorjão, V. Hagenmeyer, arXiv:2006.01771, 2020
