@@ -1,0 +1,2025 @@
+{
+  "@context": "https://raw.githubusercontent.com/OpenEnergyPlatform/oemetadata/production/oemetadata/v2/v20/context.json",
+  "contributors": [
+    {
+      "title": "DRACOS (IAI, KIT)"
+    }
+  ],
+  "metaMetadata": {
+    "metadataVersion": "OEP-2.1",
+    "metadataLicense": {
+      "name": "CC0-1.0",
+      "title": "Creative Commons Zero v1.0 Universal",
+      "path": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  "description": "This dataset contains frequency measurements taken in various power systems.",
+  "title": "Frequency measurements in distribution grids",
+  "name": "Frequency measurements in distribution grids",
+  "resources": [
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "EE01",
+      "name": "EE01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-03-25T11:09:11+0000",
+          "end": "2019-04-17T07:32:47+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_EE",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_EE",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Tallinn"
+        },
+        "extent": {
+          "name": "['Estonia', 'Baltic grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "ES_GC01",
+      "name": "ES_GC01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2018-02-04T10:36:57+0000",
+          "end": "2018-02-10T21:28:57+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_ES_GC",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_ES_GC",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Las Palmas de Gran Canaria, Canary Islands"
+        },
+        "extent": {
+          "name": "['Spain', 'Gran Canarian Grid \\t']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "ES_GC02",
+      "name": "ES_GC02",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2018-11-25T00:00:00+0000",
+          "end": "2018-11-26T12:29:44+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_ES_GC",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_ES_GC",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Las Palmas de Gran Canaria, Canary Islands"
+        },
+        "extent": {
+          "name": "['Spain', 'Gran Canarian Grid \\t']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "ES_PM01",
+      "name": "ES_PM01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-09-29T00:00:00+0000",
+          "end": "2019-12-31T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_ES_PM",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_ES_PM",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Palma de Mallorca"
+        },
+        "extent": {
+          "name": "['Spain', 'Mallorcan Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "ES_PM02",
+      "name": "ES_PM02",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2020-01-01T00:00:00+0000",
+          "end": "2020-12-31T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_ES_PM",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_ES_PM",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Palma de Mallorca"
+        },
+        "extent": {
+          "name": "['Spain', 'Mallorcan Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "ES_PM03",
+      "name": "ES_PM03",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2021-01-01T00:00:00+0000",
+          "end": "2021-03-10T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_ES_PM",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_ES_PM",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Palma de Mallorca"
+        },
+        "extent": {
+          "name": "['Spain', 'Mallorcan Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "FO01",
+      "name": "FO01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-11-03T21:50:09+0000",
+          "end": "2019-11-10T09:15:06+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_FO",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_FO",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Vestmanna"
+        },
+        "extent": {
+          "name": "['Faroe Islands', 'Faroe Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "FR01",
+      "name": "FR01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-04-16T00:00:00+0000",
+          "end": "2019-04-27T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_FR",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_FR",
+            "type": "Int64",
+            "nullable": true,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Lauris"
+        },
+        "extent": {
+          "name": "['France', 'Continental Europe']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "GB01",
+      "name": "GB01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-03-04T10:54:37+0000",
+          "end": "2019-03-07T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_UK",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_UK",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "London"
+        },
+        "extent": {
+          "name": "['United Kingdom', 'National Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "GB02",
+      "name": "GB02",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-11-10T00:00:00+0000",
+          "end": "2019-12-31T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_UK",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_UK",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "London"
+        },
+        "extent": {
+          "name": "['United Kingdom', 'National Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "HR01",
+      "name": "HR01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-04-09T00:00:00+0000",
+          "end": "2019-04-12T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_HR",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_HR",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Split"
+        },
+        "extent": {
+          "name": "['Croatia', 'Croatian Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "IS01",
+      "name": "IS01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2017-10-14T17:23:45+0000",
+          "end": "2017-10-20T07:54:06+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_IS",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_IS",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Reykjavik"
+        },
+        "extent": {
+          "name": "['Iceland', 'Icelandic Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "IT01",
+      "name": "IT01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-07-02T00:00:00+0000",
+          "end": "2019-07-06T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_IT",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_IT",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Erice, Sicily"
+        },
+        "extent": {
+          "name": "['Italy', 'Continental Europe']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "KR01",
+      "name": "KR01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2024-08-15T00:00:00+0000",
+          "end": "2024-12-11T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f60",
+            "type": "Float32",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Naju"
+        },
+        "extent": {
+          "name": "['South Korea', 'South Korean Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "MY01",
+      "name": "MY01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2022-12-04T08:54:03+0000",
+          "end": "2022-12-14T03:55:40+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50",
+            "type": "Float32",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Kuala Lumpur"
+        },
+        "extent": {
+          "name": "['Malaysia', 'National Grid, Malaysia']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "PL01",
+      "name": "PL01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-04-04T00:00:00+0000",
+          "end": "2019-04-07T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_PL",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_PL",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Krakow"
+        },
+        "extent": {
+          "name": "['Poland', 'Continental Europe']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "RU01",
+      "name": "RU01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-04-30T00:00:00+0000",
+          "end": "2019-05-12T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_RU",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_RU",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "St. Petersburg"
+        },
+        "extent": {
+          "name": "['Russia', 'Russian Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "SE01",
+      "name": "SE01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-05-06T14:16:09+0000",
+          "end": "2019-05-13T06:54:20+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_SE",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_SE",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          },
+          {
+            "name": "f50_DE_KA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_DE_KA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Stockholm"
+        },
+        "extent": {
+          "name": "['Sweden', 'Nordic Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "US_CO01",
+      "name": "US_CO01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2024-01-16T23:38:35+0000",
+          "end": "2024-11-18T13:25:34+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f60",
+            "type": "Float32",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Boulder, Colorado"
+        },
+        "extent": {
+          "name": "['United States', 'Western Interconnection']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "US_FL01",
+      "name": "US_FL01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2023-06-18T02:31:20+0000",
+          "end": "2023-07-06T15:26:08+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f60",
+            "type": "Float32",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Florida"
+        },
+        "extent": {
+          "name": "['United States', 'Eastern Interconnection']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "US_TX01",
+      "name": "US_TX01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-05-15T04:35:36+0000",
+          "end": "2019-05-16T15:03:56+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f60_US_TX01",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_US_TX01",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "College Station, Texas"
+        },
+        "extent": {
+          "name": "['United States', 'Texas Interconnection']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "US_TX02",
+      "name": "US_TX02",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-05-20T07:21:15+0000",
+          "end": "2019-05-23T23:59:58+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f60_US_TX02",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_US_TX02",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "College Station, Texas"
+        },
+        "extent": {
+          "name": "['United States', 'Texas Interconnection']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "US_UT01",
+      "name": "US_UT01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2019-05-19T02:54:06+0000",
+          "end": "2019-05-25T11:58:16+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f60_US_UT01",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_US_UT01",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Salt Lake City, Utah"
+        },
+        "extent": {
+          "name": "['United States', 'Western Interconnection']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
+      "@id": "ZA01",
+      "name": "ZA01",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2017-11-19T11:33:08+0000",
+          "end": "2017-11-28T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_ZA",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_ZA",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-05-12",
+      "spatial": {
+        "location": {
+          "address": "Cape Town"
+        },
+        "extent": {
+          "name": "['South Africa', 'South African Grid']"
+        }
+      }
+    }
+  ]
+}

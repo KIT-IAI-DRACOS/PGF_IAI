@@ -2,18 +2,116 @@
 
 Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) - 218 mb.
 
-| Location | Country | Synchronous Area | resolution |  date range | number of days |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Karlsruhe | Germany | Continental Europe | 1 sec | 2019-07-09 - 2019-08-18 | 41.0 |
-| Oldenburg | Germany | Continental Europe | 1 sec | 2019-07-10 - 2019-08-07 | 41.0 |
-| Istanbul | Turkey |  Continental Europe  | 1 sec | 2019-07-09 - 2019-08-18 | 41.0 |
-| Lisbon | Portugal |  Continental Europe  | 1 sec | 2019-07-09 - 2019-08-16 | 41.0 |
+<table class="newTbl" style="width: 980px">
+   <thead>
+      <tr>
+        <th>Location</th>
+        <th>Country</th>
+        <th>Synchronous Area</th>
+        <th>Resolution</th>
+        <th>Date Range</th>
+        <th>Number of days</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>Karlsruhe</td>
+          <td>Germany</td>
+          <td>Continental Europe</td>
+          <td>1 sec</td>
+          <td>2019-07-09 - 2019-08-18</td>
+          <td>41.0</td>
+      </tr>
+      <tr>
+          <td>Oldenburg</td>
+          <td>Germany</td>
+          <td>Continental Europe</td>
+          <td>1 sec</td>
+          <td>2019-07-10 - 2019-08-07</td>
+          <td>41.0</td>
+      </tr>
+      <tr>
+          <td>Istanbul</td>
+          <td>Turkey</td>
+          <td>Continental Europe</td>
+          <td>1 sec</td>
+          <td>2019-07-09 - 2019-08-18</td>
+          <td>41.0</td>
+      </tr>
+      <tr>
+          <td>Lisbon</td>
+          <td>Portugal</td>
+          <td>Continental Europe</td>
+          <td>1 sec</td>
+          <td>2019-07-09 - 2019-08-16</td>
+          <td>41.0</td>
+      </tr>
+    </tbody>
+  </table>
 
+### GPS-Synchronised measurements of the synchronization of the Baltic grid and the CE synchronous area
+
+<table class="newTbl" style="width: 980px">
+   <thead>
+      <tr>
+        <th>Location</th>
+        <th>Country</th>
+        <th>Synchronous Area</th>
+        <th>Resolution</th>
+        <th>Date Range</th>
+        <th>Number of days</th>
+        <th>Link</th>
+        <th>Size (GB)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>Berlin</td>
+          <td>Germany</td>
+          <td>Continental Europe</td>
+          <td>0.1 sec</td>
+          <td>2025-01-23 - 2025-01-23 </td>
+          <td>34.0</td>
+          <td><a href="https://osf.io/tcx6g/download">OSF link</a> </td>
+          <td>1.3</td>
+      </tr>
+      <tr>
+          <td>Elk</td>
+          <td>Poland</td>
+          <td>Continental Europe</td>
+          <td>0.1 sec</td>
+          <td>2025-01-23 - 2025-01-23</td>
+          <td>34.0</td>
+          <td><a href="https://osf.io/28qre/download">OSF link</a> </td>
+          <td>1.3</td>
+      </tr>
+      <tr>
+          <td>Kaunas</td>
+          <td>Lithuania</td>
+          <td>Baltic Grid/Continental Europe</td>
+          <td>0.1 sec</td>
+          <td>2025-01-23 - 2025-01-23</td>
+          <td>34.0</td>
+          <td><a href="https://osf.io/py9xg/download">OSF link</a> </td>
+          <td>1.3</td>
+      </tr>
+      <tr>
+          <td>Tallinn</td>
+          <td>Estonia</td>
+          <td>Baltic Grid/Continental Europe</td>
+          <td>0.1 sec</td>
+          <td>2025-01-23 - 2025-01-23</td>
+          <td>34.0</td>
+          <td><a href="https://osf.io/n6pc8/download">OSF link</a> </td>
+          <td>1.3</td>
+      </tr>
+    </tbody>
+  </table>
 
 ### Standalone measurements
 
 
-<label for="txtSearchStandalone">Enter text to search the table</label>
+<!-- <label for="txtSearchStandalone">Enter text to search the table</label>
 <input type="input" id="txtSearchStandalone" name="txtSearchStandalone"/>
   <table id="dynamicStandalone" style="width: 980px">
     <thead>
@@ -30,15 +128,16 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     </thead>
     <tbody>
     </tbody>
-  </table>
+  </table> -->
 
 <label for="txtSearchStandaloneMetadata">Enter text to search the table</label>
 <input type="input" id="txtSearchStandaloneMetadata" name="txtSearchStandaloneMetadata"/>
-  <table id="metadataStandalone" style="width: 980px">
+  <table id="metadataStandalone" class="newTbl" style="width: 980px">
    <thead>
       <tr>
         <th>Location</th>
         <th>Country</th>
+        <th>Synchronous Area</th>
         <th>Resolution</th>
         <th>Date Range</th>
         <th>Path</th>
@@ -47,69 +146,110 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     </thead>
     <tbody></tbody>
   </table>
+  <div id="metadataPagination" style="margin-top:10px; display:flex; align-items:center; gap:10px; font-size:13px;"></div>
+
+  <style>
+    #metadataPagination button {
+      padding: 4px 14px;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #f1c866, #f6c982);
+      color: #000000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    #metadataPagination button:disabled { opacity: 0.35; cursor: not-allowed; }
+    #metadataPagination button:not(:disabled):hover { opacity: 0.85; }
+    #metadataPagination .page-info { color: #444; }
+  </style>
 
 
 
   <script>
 
-    async function loadMetadata() {
-      const response = await fetch("./../assets/files/iceland.json");
-      const data = await response.json();
+    function createMetadataRow(item, index) {
+      const ts = item.temporal[0];
+      const row = document.createElement("tr");
+      const itemname = item.name
 
+      const cells = [
+        `<label>${item.spatial.location.address}</label>`,
+        `<label>${item.spatial.extent.name}</label>`,
+        `<label>${item.spatial.extent.name}</label>`,
+        `<label>${ts.resolution}</label>`,
+        `<label>${ts.start}<br/>${ts.end}</label>`,
+        `<a href="${item.path}" target="_blank">OSF Link</a>`,
+        `<button id="btnAnalysis-${index}" class="btnAnalysis" title="Analysis from ${ts.start} to ${ts.end}" onclick="runAnalysis('${item.name}')">Analysis</button>` 
+      ];
+
+      cells.forEach(html => {
+        const td = document.createElement("td");
+        td.innerHTML = html;
+        row.appendChild(td);
+      });
+
+      return row;
+    }
+
+    const PAGE_SIZE = 10;
+    let allMetadataItems = [];
+    let filteredMetadataItems = [];
+    let currentMetadataPage = 1;
+
+    function renderMetadataPage(items, page) {
       const tbody = document.querySelector("#metadataStandalone tbody");
       tbody.innerHTML = "";
+      const start = (page - 1) * PAGE_SIZE;
+      items.slice(start, start + PAGE_SIZE).forEach((item, i) => {
+        tbody.appendChild(createMetadataRow(item, start + i));
+      });
+      renderMetadataPagination(items, page);
+    }
 
-      locationValue=`<label>${data.spatial.location.address}</label>`;
-      country=`<label>${data.spatial.extent.name}</label>`;
-      temporal=`<label>${data.temporal.timeseries[0].resolutionValue}</label>`;
-      dateRange=`<label>${data.temporal.timeseries[0].start}<br/>${data.temporal.timeseries[0].end}</label>`; 
-      path=`<a href="${data.path}" target="_blank">OSF Link</a>`;
-      analysis=`<button id="btnAnalysis" title="Analysis plot is from ${data.temporal.timeseries[0].start} to ${data.temporal.timeseries[0].end}" class="btnAnalysis" onclick="runAnalysis()">Analysis</button>`;
+    function renderMetadataPagination(items, page) {
+      const total = Math.ceil(items.length / PAGE_SIZE);
+      const container = document.getElementById("metadataPagination");
+      container.innerHTML = "";
+      if (total <= 1) return;
 
-      row = document.createElement("tr"); 
+      const prev = document.createElement("button");
+      prev.textContent = "←";
+      prev.disabled = page === 1;
+      prev.onclick = () => renderMetadataPage(filteredMetadataItems, --currentMetadataPage);
 
-      [row, locationValue, country, temporal, path];
+      const info = document.createElement("span");
+      info.className = "page-info";
+      info.textContent = `Page ${page} of ${total} (${items.length} items)`;
 
-      locationCell = document.createElement("td");
-      locationCell.innerHTML = locationValue;
+      const next = document.createElement("button");
+      next.textContent = "→";
+      next.disabled = page === total;
+      next.onclick = () => renderMetadataPage(filteredMetadataItems, ++currentMetadataPage);
 
-      countryCell = document.createElement("td");
-      countryCell.innerHTML = country;
+      container.append(prev, info, next);
+    }
 
-      temporalCell = document.createElement("td");
-      temporalCell.innerHTML = temporal;
-
-      dateRangeCell = document.createElement("td");
-      dateRangeCell.innerHTML = dateRange;
-
-      pathCell = document.createElement("td");
-      pathCell.innerHTML = path;
-
-      analysisCell = document.createElement("td");
-      analysisCell.innerHTML = analysis;
-
-      row.appendChild(locationCell);
-      row.appendChild(countryCell);
-      row.appendChild(temporalCell);
-      row.appendChild(dateRangeCell);
-      row.appendChild(pathCell);
-      row.appendChild(analysisCell);
-
-      tbody.appendChild(row);
+    async function loadMetadata() {
+      const response = await fetch("./../assets/files/example_metadata_various_campaigns_python.json");
+      const data = await response.json();
+      allMetadataItems = Array.isArray(data.resources) ? data.resources : [data.resources];
+      filteredMetadataItems = allMetadataItems;
+      currentMetadataPage = 1;
+      renderMetadataPage(filteredMetadataItems, currentMetadataPage);
     }
 
     loadMetadata();
-    
-    document.getElementById("txtSearchStandalone").onkeyup = e => {
-        const rows = document.querySelectorAll("#dynamicStandalone tbody tr");
-        for (const tr of rows)
-            tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
-    };
 
     document.getElementById("txtSearchStandaloneMetadata").onkeyup = e => {
-        const rows = document.querySelectorAll("#metadataStandalone tbody tr");
-        for (const tr of rows)
-            tr.style.display = tr.innerText.toLowerCase().includes(e.target.value.toLowerCase()) ? "" : "none";
+      const q = e.target.value.toLowerCase();
+      filteredMetadataItems = allMetadataItems.filter(item => {
+        const ts = item.temporal[0];
+        return [item.spatial.location.address, item.spatial.extent.name, ts.resolution, ts.start, ts.end]
+          .join(' ').toLowerCase().includes(q);
+      });
+      currentMetadataPage = 1;
+      renderMetadataPage(filteredMetadataItems, currentMetadataPage);
     };
 
 
@@ -136,19 +276,19 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
     { "location": "St. Petersburg", "country": "Russia", "synchronousArea": "Russian Grid", "Resolution":"1 sec", "dateRange":"   2019-04-30 - 2019-05-12 ", "noOfDays":" 13.0 ","link":'<a href="https://osf.io/tvsyc/download">OSF link</a>', "size":"44.5"}
     ];
 
-    const tableBody = document.getElementById('dynamicStandalone').getElementsByTagName('tbody')[0];
+    // const tableBody = document.getElementById('dynamicStandalone').getElementsByTagName('tbody')[0];
 
-    jsonData.forEach(item => {
-      let row = tableBody.insertRow();
-      Object.values(item).forEach(text => {
-        let cell = row.insertCell();
-        if (text.includes("<a ")) {
-            cell.innerHTML = text;
-            } else {
-            cell.textContent = text;
-        }
-      });
-    });
+    // jsonData.forEach(item => {
+    //   let row = tableBody.insertRow();
+    //   Object.values(item).forEach(text => {
+    //     let cell = row.insertCell();
+    //     if (text.includes("<a ")) {
+    //         cell.innerHTML = text;
+    //         } else {
+    //         cell.textContent = text;
+    //     }
+    //   });
+    // });
   </script>
 
   <style>
@@ -173,8 +313,8 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
   <br>
   <div id="divAnalysis" style="display:none;">
-    <div id="plotAutocorr" style="width:100%; height:350px; margin-top:16px;"></div>
     <div id="plotHistogram" style="width:100%; height:350px; margin-top:16px;"></div>
+    <div id="plotAutocorr" style="width:100%; height:350px; margin-top:16px;"></div>
   </div>
 
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
@@ -193,38 +333,36 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
       return { headers, cols };
     }
 
-    async function runAnalysis() {
+    async function fetchAnalysis(loc){
+      const response = await fetch("./../assets/files/frequency_measurements_statistics.json");
+      const data = await response.json();
+
+      const analysis = data[loc];
+
+      return analysis;
+    }
+
+    async function runAnalysis(loc) {
+      document.getElementById('divAnalysis').style.display = 'none';
+
       const btn = document.getElementById('btnAnalysis');
-      btn.disabled = true;
-      btn.textContent = 'Loading...';
 
       const base = (typeof BASE_URL !== 'undefined') ? BASE_URL : '';
-      const [autocorr, histogram] = await Promise.all([
-        parseCSV('./../assets/files/IS01_autocorr.csv'),
-        parseCSV('./../assets/files/IS01_histogram.csv')
-      ]);
+      
+      let autocorr_data;
+      let histogram_data;
 
+      const analysis = await fetchAnalysis(loc);
+    
+      autocorr_data = analysis.autocorrelation;
+      histogram_data = analysis.histogram_values;
+     
       document.getElementById('divAnalysis').style.display = 'block';
 
-      const acH = autocorr.headers;
-      Plotly.newPlot('plotAutocorr', [{
-        x: autocorr.cols[acH[0]],
-        y: autocorr.cols[acH[1]],
-        type: 'scatter',
-        mode: 'lines',
-        line: { color: '#f19e63', width: 2 },
-        name: acH[1]
-      }], {
-        title: { text: 'Autocorrelation', font: { size: 16 } },
-        xaxis: { title: 'lag (s)', dtick: 300 },
-        yaxis: { title: acH[1] },
-        margin: { t: 50, r: 20, b: 50, l: 60 }
-      }, { responsive: true });
-
-      const hH = histogram.headers;
+      const hH = "Histograms";
       Plotly.newPlot('plotHistogram', [{
-        x: histogram.cols[hH[0]],
-        y: histogram.cols[hH[1]],
+        x: analysis.bin_centers,
+        y: histogram_data,
         type: 'bar',
         marker: { color: '#f63bb5' },
         name: hH[1]
@@ -235,6 +373,21 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
         margin: { t: 50, r: 20, b: 50, l: 60 }
       }, { responsive: true });
 
+      const acH = 'Autocorrelation';
+      Plotly.newPlot('plotAutocorr', [{
+        x: analysis.lags,
+        y: autocorr_data,
+        type: 'scatter',
+        mode: 'lines',
+        line: { color: '#f19e63', width: 2 },
+        name: acH[1]
+      }], {
+        title: { text: 'Autocorrelation', font: { size: 16 } },
+        xaxis: { title: 'lag (s)', dtick: 300 },
+        yaxis: { title: 'Autocorrelation' },
+        margin: { t: 50, r: 20, b: 50, l: 60 }
+      }, { responsive: true });
+      
       btn.textContent = 'Analysis';
       btn.disabled = false;
     }
