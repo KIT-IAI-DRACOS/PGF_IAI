@@ -10,7 +10,6 @@ classes: wide
 ---
 <div class="wrapper">
   <div id="map" class="leafmap" style="border: 1px solid #ccc"></div>
-  <div id="slider"></div>
 </div>
 
 
@@ -107,25 +106,6 @@ L.geoJson(GranCanariaGeo, {style: style, onEachFeature: mouseOverFeature}).addTo
 L.geoJson(SouthAfricaGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
 L.geoJson(JapanGeo, {style: style, onEachFeature: mouseOverFeature}).addTo(map);
 
-const years = {
-  "2011": L.layerGroup(),
-  "2012": L.layerGroup(),
-  "2013": L.layerGroup(),
-  "2014": L.layerGroup(),
-  "2015": L.layerGroup(),
-  "2016": L.layerGroup(),
-  "2017": L.layerGroup(),
-  "2018": L.layerGroup(),
-  "2019": L.layerGroup(),
-  "2020": L.layerGroup(),
-  "2021": L.layerGroup(),
-  "2022": L.layerGroup(),
-  "2023": L.layerGroup(),
-  "2024": L.layerGroup(),
-  "2025": L.layerGroup(),
-  "2026": L.layerGroup()
-};
-
 L.geoJSON(locations, {
     filter: function(feature) {
         return feature.properties.icon === "Green";
@@ -134,8 +114,6 @@ L.geoJSON(locations, {
 }).addTo(map);
 
 function iconBindPopup(feature, layer) {
-    layer.options['start_date'] = feature.properties.start_date;
-    layer.options['end_date'] = feature.properties.end_date;
     if (feature.properties && feature.properties.location) {
         layer.bindPopup(feature.properties.logo + feature.properties.location);
     };
@@ -147,11 +125,6 @@ function iconBindPopup(feature, layer) {
             window.location.href = BASE_URL + '/database/#standalone-measurements';
         });
     };
-    Object.keys(years).forEach(function (item, index) {
-      if (layer.options.start_date <= parseInt(item) && layer.options.end_date >= parseInt(item)) {
-        layer.addTo(years[item]);
-      };
-    });
 }
 
 
@@ -209,34 +182,6 @@ legend.onAdd = function (map) {
 legend.addTo(map);
 info.addTo(map);
 
-// Slider
-var slider = document.getElementById('slider');
-noUiSlider.create(slider, {
-    start: [2017, 2026], // Handle start position
-    connect: true, // Display a colored bar between the handles
-    step: 1, // Steps shown, i.e., year by year
-    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: { // Slider can select '0' to '100'
-        'min': 2017,
-        'max': 2026
-    },
-    pips: { // Show a scale with the slider
-        mode: 'steps',
-        density: 6,
-    }
-});
-
-slider.noUiSlider.on('update', function (values, handle) {
-    let new_times = slider.noUiSlider.get(true);
-    Object.keys(years).forEach(function (item, index) {
-      map.removeLayer(years[item]);
-    });
-    Object.keys(years).forEach(function (item, index) {
-      if ( new_times[0] <= parseInt(item) && new_times[1] >= parseInt(item)) {
-        map.addLayer(years[item]);
-      };
-    });
-});
 
 
 </script>
