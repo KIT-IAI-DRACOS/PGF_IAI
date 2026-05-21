@@ -1,0 +1,38 @@
+name: Weekly Link Check
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday at 9 AM UTC
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --accept 200,201,204,206,429
+            --timeout 20
+            --max-retries 3
+            --exclude "localhost"
+            --exclude "powerbi.com"
+            https://kit-iai-dracos.github.io/PGF_IAI/
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Issue on Failure
+        if: failure()
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "🔗 Broken links detected — ${{ github.run_id }}"
+          content-filepath: ./lychee/out.md
+          labels: broken-links, automated
