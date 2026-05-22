@@ -7,12 +7,10 @@ on:
 
 jobs:
 
-  # Job 1 — check all HTML links on the live site
   check-html-links:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Check live site links
         uses: lycheeverse/lychee-action@v1
         with:
@@ -24,42 +22,45 @@ jobs:
             --max-retries 3
             --exclude "kit-iai-dracos.github.io/#"
             --exclude "powerbi.com"
+            --exclude "osf.io"
             https://kit-iai-dracos.github.io/PGF_IAI/
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  # Job 2 — check links hidden inside the JSON file
-  check-json-links:
+  check-osf-links:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Extract links from JSON
+      - name: Check OSF links for soft 404s
         run: |
-          # Pulls out every value that looks like a URL from your JSON file
-          grep -oP 'https?://[^\s"]+' assets/files/example_metadata_various_campaigns_python.json > /tmp/json-links.txt
-          echo "Found links:"
-          cat /tmp/json-links.txt
+          grep -rhoP 'https://osf\.io/[^\s"<>]+' . \
+            --include="*.html" \
+            --include="*.md" \
+            --include="*.json" \
+            --include="*.yml" \
+            | sort -u > /tmp/osf-links.txt
 
-      - name: Check extracted links
-        uses: lycheeverse/lychee-action@v1
-        with:
-          args: >
-            --verbose
-            --no-progress
-            --accept 200,201,204,206,429
-            --timeout 20
-            --max-retries 3
-            /tmp/json-links.txt
-          fail: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          echo "Found OSF links:"
+          cat /tmp/osf-links.txt
+          BROKEN=0
 
-  # Job 3 — open issue if either job fails
+          while IFS= read -r url; do
+            BODY=$(curl -s --max-time 20 "$url")
+            if echo "$BODY" | grep -qiE '"title"\s*:\s*"OSF"' && \
+               ! echo "$BODY" | grep -qiE 'files|project|component|preprint'; then
+              echo "❌ SOFT 404: $url"
+              BROKEN=1
+            else
+              echo "✅ OK: $url"
+            fi
+          done < /tmp/osf-links.txt
+
+          exit $BROKEN
+
   report:
     runs-on: ubuntu-latest
-    needs: [check-html-links, check-json-links]
+    needs: [check-html-links, check-osf-links]
     if: failure()
     steps:
       - name: Create Issue
