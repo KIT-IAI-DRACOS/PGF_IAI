@@ -24,6 +24,7 @@ jobs:
             --max-retries 3
             --exclude "localhost"
             --exclude "powerbi.com"
+             --exclude "kit-iai-dracos.github.io/#"
             https://kit-iai-dracos.github.io/PGF_IAI/
           fail: true
         env:
