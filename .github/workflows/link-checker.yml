@@ -130,7 +130,7 @@ jobs:
           title: "🔗 Broken links detected — ${{ github.run_id }}"
           content-filepath: ./report.md
           labels: broken-links, automated
-          assignees: hallahs   # GitHub users get notified via GitHub
+          assignees: HallahButt   # GitHub users get notified via GitHub
       
       - name: Send Email to Full Team
         uses: dawidd6/action-send-mail@v3
@@ -139,7 +139,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          to: hallah.butt@kit.edu         # catches people without GitHub accounts
+          to: hallah.butt@kit.edu         
           from: "PGF Link Checker <noreply@kit.edu>"
           subject: "🔗 Broken links detected in PGF_IAI"
           body: |
