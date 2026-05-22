@@ -50,7 +50,7 @@ jobs:
             API_URL="https://api.osf.io/v2/guids/${guid}/"
             HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "$API_URL")
       
-            if [ "$HTTP_STATUS" = "200" ]; then
+            if [ "$HTTP_STATUS" = "200" ] || [ "$HTTP_STATUS" = "302" ]; then
               echo "✅ OK: https://osf.io/$guid → API $HTTP_STATUS"
             else
               echo "❌ BROKEN: https://osf.io/$guid → API $HTTP_STATUS"
