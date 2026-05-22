@@ -1,16 +1,15 @@
 name: Weekly Link Check
-
 on:
   schedule:
-    - cron: '0 9 * * 1'  # Every Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
   workflow_dispatch:
 
 jobs:
-
   check-html-links:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Check live site links
         uses: lycheeverse/lychee-action@v1
         with:
@@ -29,16 +28,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload lychee report
-        if: always()   # run even if previous step failed
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: lychee-report
-          path: ./lychee/out.md
-          
+          path: ./lychee/out.md       
+
   check-osf-links:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Check OSF links via API
         run: |
           grep -rhoP 'https://osf\.io/([a-z0-9]+)' . \
@@ -47,17 +47,19 @@ jobs:
             --include="*.json" \
             --include="*.yml" \
             | sed 's|https://osf\.io/||' \
-            | grep -vE '^(download|files|osfstorage)$' \
+            | grep -vE '^(download|files|osfstorage|preprints|registrations|meetings|search|profile|settings|support|explore|institutions|login|logout|register|project|components)$' \
             | sort -u > /tmp/osf-guids.txt
-      
+
           echo "Found OSF GUIDs:"
           cat /tmp/osf-guids.txt
           BROKEN=0
-      
+
           while IFS= read -r guid; do
             API_URL="https://api.osf.io/v2/guids/${guid}/"
-            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "$API_URL")
-      
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 20 "$API_URL")
+            #                                                      ^^
+            #                                 CHANGE 1: added -L to follow redirects
+
             if [ "$HTTP_STATUS" = "200" ] || [ "$HTTP_STATUS" = "302" ]; then
               echo "✅ OK: https://osf.io/$guid → API $HTTP_STATUS"
             else
@@ -65,21 +67,28 @@ jobs:
               BROKEN=1
             fi
           done < /tmp/osf-guids.txt
-      
+
           exit $BROKEN
 
       - name: Save OSF report
         if: always()
         run: |
-            echo "## OSF Link Check Results" > /tmp/osf-report.md
-            echo "Run: ${{ github.run_id }}" >> /tmp/osf-report.md
-  
+          mkdir -p ./lychee
+          #^^^^^^^^^
+          # CHANGE 2: create ./lychee folder first, it doesn't exist on this machine
+          
+          echo "## OSF Link Check Results" > ./lychee/osf-report.md
+          # CHANGE 3: write to ./lychee/osf-report.md not /tmp/osf-report.md
+          #           so it matches the upload path below
+          
+          echo "Run: ${{ github.run_id }}" >> ./lychee/osf-report.md
+
       - name: Upload OSF report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-            name: osf-report
-            path: /tmp/osf-report.md
+          name: osf-report
+          path: ./lychee/osf-report.md  
 
   report:
     runs-on: ubuntu-latest
@@ -90,18 +99,30 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: lychee-report
-        continue-on-error: true   # in case html job passed and no report exists
+          path: ./reports/            
+        continue-on-error: true
 
+      - name: Download OSF report
+        uses: actions/download-artifact@v4
+        with:
+          name: osf-report
+          path: ./reports/             
+        continue-on-error: true
+       
       - name: Create failure report
         run: |
           echo "## 🔗 Broken Links Detected" > ./report.md
-          echo "**Run ID:** ${{ github.run_id }}" >> ./report.md
           echo "**Run URL:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> ./report.md
           echo "" >> ./report.md
-          if [ -f ./out.md ]; then
-            echo "### HTML Link Check Report" >> ./report.md
-            cat ./out.md >> ./report.md
-          fi
+
+          for f in ./reports/*; do
+          # CHANGE 6: loop over all files in ./reports/ instead of hardcoding out.md
+            if [ -f "$f" ]; then
+              echo "### $(basename $f)" >> ./report.md
+              cat "$f" >> ./report.md
+              echo "" >> ./report.md
+            fi
+          done
 
       - name: Create Issue
         uses: peter-evans/create-issue-from-file@v5
