@@ -40,6 +40,7 @@ jobs:
             --include="*.json" \
             --include="*.yml" \
             | sed 's|https://osf\.io/||' \
+            | grep -vE '^(download|files|osfstorage)$' \
             | sort -u > /tmp/osf-guids.txt
       
           echo "Found OSF GUIDs:"
