@@ -1,6 +1,8 @@
 title: Power-grid frequency database
 repository: HallahButt/PGF
-baseurl: /
+baseurl: /PGF_IAI
+atom_feed:
+  hide: true
 permalink: '/:title/'
 remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: "dirt"
