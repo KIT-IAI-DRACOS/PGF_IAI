@@ -32,30 +32,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check OSF links for soft 404s
+      - name: Check OSF links via API
         run: |
-          grep -rhoP 'https://osf\.io/[^\s"<>]+' . \
+          grep -rhoP 'https://osf\.io/([a-z0-9]+)' . \
             --include="*.html" \
             --include="*.md" \
             --include="*.json" \
             --include="*.yml" \
-            | sort -u > /tmp/osf-links.txt
-
-          echo "Found OSF links:"
-          cat /tmp/osf-links.txt
+            | sed 's|https://osf\.io/||' \
+            | sort -u > /tmp/osf-guids.txt
+      
+          echo "Found OSF GUIDs:"
+          cat /tmp/osf-guids.txt
           BROKEN=0
-
-          while IFS= read -r url; do
-            BODY=$(curl -s --max-time 20 "$url")
-            if echo "$BODY" | grep -qiE '"title"\s*:\s*"OSF"' && \
-               ! echo "$BODY" | grep -qiE 'files|project|component|preprint'; then
-              echo "❌ SOFT 404: $url"
-              BROKEN=1
+      
+          while IFS= read -r guid; do
+            API_URL="https://api.osf.io/v2/guids/${guid}/"
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "$API_URL")
+      
+            if [ "$HTTP_STATUS" = "200" ]; then
+              echo "✅ OK: https://osf.io/$guid → API $HTTP_STATUS"
             else
-              echo "✅ OK: $url"
+              echo "❌ BROKEN: https://osf.io/$guid → API $HTTP_STATUS"
+              BROKEN=1
             fi
-          done < /tmp/osf-links.txt
-
+          done < /tmp/osf-guids.txt
+      
           exit $BROKEN
 
   report:
