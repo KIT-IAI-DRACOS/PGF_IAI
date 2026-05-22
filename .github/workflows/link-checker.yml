@@ -6,14 +6,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  link-check:
+
+  # Job 1 — check all HTML links on the live site
+  check-html-links:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Link Checker
+      - name: Check live site links
         uses: lycheeverse/lychee-action@v1
         with:
           args: >
@@ -22,16 +22,47 @@ jobs:
             --accept 200,201,204,206,429
             --timeout 20
             --max-retries 3
-            --exclude "localhost"
+            --exclude "kit-iai-dracos.github.io/#"
             --exclude "powerbi.com"
-             --exclude "kit-iai-dracos.github.io/#"
             https://kit-iai-dracos.github.io/PGF_IAI/
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create Issue on Failure
-        if: failure()
+  # Job 2 — check links hidden inside the JSON file
+  check-json-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract links from JSON
+        run: |
+          # Pulls out every value that looks like a URL from your JSON file
+          grep -oP 'https?://[^\s"]+' assets/files/example_metadata_various_campaigns_python.json > /tmp/json-links.txt
+          echo "Found links:"
+          cat /tmp/json-links.txt
+
+      - name: Check extracted links
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --accept 200,201,204,206,429
+            --timeout 20
+            --max-retries 3
+            /tmp/json-links.txt
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Job 3 — open issue if either job fails
+  report:
+    runs-on: ubuntu-latest
+    needs: [check-html-links, check-json-links]
+    if: failure()
+    steps:
+      - name: Create Issue
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: "🔗 Broken links detected — ${{ github.run_id }}"
