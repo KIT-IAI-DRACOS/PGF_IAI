@@ -124,9 +124,26 @@ jobs:
             fi
           done
 
-      - name: Create Issue
+      - name: Create and Assign Issue
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: "🔗 Broken links detected — ${{ github.run_id }}"
           content-filepath: ./report.md
           labels: broken-links, automated
+          assignees: hallahs   # GitHub users get notified via GitHub
+      
+      - name: Send Email to Full Team
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          to: hallah.butt@kit.edu         # catches people without GitHub accounts
+          from: "PGF Link Checker <noreply@kit.edu>"
+          subject: "🔗 Broken links detected in PGF_IAI"
+          body: |
+            Broken links were detected in the PGF_IAI website.
+            
+            View full report:
+            ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
