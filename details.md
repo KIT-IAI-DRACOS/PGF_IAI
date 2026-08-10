@@ -2,7 +2,7 @@
 
 Welcome to the Power-Grid Frequency Database. Here you can find recordings of power-grid frequency from across the globe, as well as interactive visualizations. 
 
-This website is the front-end of the data repository [Open Access Power-Grid Frequency Database](https://osf.io/m43tg/), hosted in the [Open Science Framework](https://osf.io/). The [Power-Grid Frequency Database website](https://lrydin.github.io/Power-Grid-Frequency/) contains all the relevant information on the content of this database. You can find links to each dataset on the map above or in the [database]({{ site.baseurl }}/database).
+This website is the front-end of the data repository [Open Access Power-Grid Frequency Database](https://osf.io/m43tg/), hosted in the [Open Science Framework](https://osf.io/). The [Power-Grid Frequency Database website](https://power-grid-frequency.org/) contains all the relevant information on the content of this database. You can find links to each dataset on the map above or in the [database]({{ site.baseurl }}/database).
 
 The data here is always free for use but we ask you to cite our data base articles listed under [Publications](https://power-grid-frequency.org/publications/).
 
