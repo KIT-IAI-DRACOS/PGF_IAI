@@ -15,7 +15,7 @@ This page contains archived power-grid frequency data no longer actively maintai
 
 # Publicly available data from TSOs
 
-The links are direct downloads. Each is a zipped csv `.csv.zip` file. In [Power-Grid-Frequency](https://github.com/LRydin/Power-Grid-Frequency/tree/master/Data) and each respective subfolder you can find a plot for each month of the processed data with some details of the data processing and the quality of the actual data.
+The links are direct downloads. Each is a zipped csv `.csv.zip` file. In [Power-Grid-Frequency](https://github.com/KIT-IAI-DRACOS/PGF_IAI/tree/master/Data) and each respective subfolder you can find a plot for each month of the processed data with some details of the data processing and the quality of the actual data.
 
 _Data structure_
 
