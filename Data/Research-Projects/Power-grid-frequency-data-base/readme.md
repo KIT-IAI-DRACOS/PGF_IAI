@@ -175,8 +175,8 @@ Single link with the four recordings: [OSF link](https://osf.io/p5xyr/download) 
 
       const cells = [
         `<label>${item.spatial.location.address}</label>`,
-        `<label>${item.spatial.extent.name}</label>`,
-        `<label>${item.spatial.extent.name}</label>`,
+        `<label>${item.spatial.extent.name[0]}</label>`,
+        `<label>${item.spatial.extent.name[1]}</label>`,
         `<label>${ts.resolution}</label>`,
         `<label>${ts.start}<br/>${ts.end}</label>`,
         `<a href="${item.path}" target="_blank">OSF Link</a>`,
