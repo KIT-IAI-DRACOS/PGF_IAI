@@ -20,7 +20,7 @@ We preprocess the data and make it available, formatted for scientific purposes.
 
 ### Collaboration
 Data should be open. Science should be transparent. We accept contributions from all parties, private or personal, if those naturally have the same interest at heart: sharing the data openly. We review the data ourselves and, if needed, process it using our scripts, to ensure a uniform structure oriented for research usage. This means the data are saved in `.csv` files, which can be read in any platform, and is compressed in `.zip` format to considerably reduce overhead and making easy to download.
-If you wish to contribute, open an issue on the GitHub repository [Power-Grid-Frequency](https://github.com/LRydin/Power-Grid-Frequency/issues) and we will add the data, convert it into the desired format, report on the relevant information, and upload it to the repository.
+If you wish to contribute, open an issue on the GitHub repository [Power-Grid-Frequency](https://github.com/KIT-IAI-DRACOS/PGF_IAI/issues) and we will add the data, convert it into the desired format, report on the relevant information, and upload it to the repository.
 
 ## The project
 ### History
