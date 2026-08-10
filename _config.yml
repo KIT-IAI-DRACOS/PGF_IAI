@@ -1,6 +1,6 @@
 title: Power-grid frequency database
 repository: HallahButt/PGF
-baseurl: /PGF_IAI
+baseurl: /
 atom_feed:
   hide: true
 permalink: '/:title/'
