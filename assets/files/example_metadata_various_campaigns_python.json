@@ -560,6 +560,84 @@
         "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
         "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
       },
+      "@id": "ES_PM_solar_eclipse_2026",
+      "name": "ES_PM_solar_eclipse_2026",
+      "path": "https://osf.io/by5hu/files/osfstorage",
+      "temporal": [
+        {
+          "start": "2026-08-11T00:00:00+0000",
+          "end": "2026-08-13T23:59:59+0000",
+          "resolution": "1.0 S",
+          "alignment": "left",
+          "aggregationType": "avg"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Time",
+            "type": "Datetime(time_unit='ms', time_zone='UTC')",
+            "nullable": false,
+            "description": "Time stamp of measurement"
+          },
+          {
+            "name": "f50_ES_PM",
+            "type": "Float64",
+            "nullable": false,
+            "description": "Frequency derivative in mHz"
+          },
+          {
+            "name": "QI_ES_PM",
+            "type": "Int64",
+            "nullable": false,
+            "description": "Quality index, 0 for good data, 1 and 2 for bad data"
+          }
+        ],
+        "primaryKey": [
+          "Time"
+        ],
+        "dialect": {
+          "delimiter": ";",
+          "decimalSeparator": "."
+        }
+      },
+      "publicationDate": "2026-08-24",
+      "spatial": {
+        "location": {
+          "address": "Palma de Mallorca"
+        },
+        "extent": {
+          "name": "['Spain', 'Mallorcan Grid']"
+        }
+      }
+    },
+    {
+      "subject": [
+        {
+          "name": "energy",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000150"
+        },
+        {
+          "name": "test dataset",
+          "path": "https://openenergy-platform.org/ontology/oeo/OEO_00000408"
+        }
+      ],
+      "languages": [
+        "en-GB",
+        "en-US",
+        "de-DE",
+        "fr-FR"
+      ],
+      "keywords": [
+        "energy",
+        "voltage",
+        "smart grid",
+        "kit"
+      ],
+      "projectContext": {
+        "homepage": "https://www.iai.kit.edu/fachgebiete_4102.php",
+        "publisher": "WG Data-driven Analysis of Complex Systems (DRACOS), Institute for Automation and applied Informatics (IAI), Karlsruhe Institute of Technology (KIT)"
+      },
       "@id": "FO01",
       "name": "FO01",
       "path": "https://osf.io/by5hu/files/osfstorage",
